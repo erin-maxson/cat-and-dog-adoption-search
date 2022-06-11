@@ -4,8 +4,9 @@
 
 
 .cats {
-        background: url("https://images.pexels.com/photos/8264/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb") top right no-repeat;
-        height: 65vh;
+        background: url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
+        height: 50vh;
+        width: 100%;
         background-size: cover;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -13,12 +14,14 @@
         -webkit-align-items: center;
             -ms-flex-align: center;
                 align-items: center;
+        padding: 20px;
       
 }
 
 .dogs {
-    background: url("https://images.pexels.com/photos/8264/pexels-photo.jpg?h=350&auto=compress&cs=tinysrgb") top right no-repeat;
-    height: 65vh;
+    background: url("./images/dogs.jpg") top right no-repeat;
+    height: 50vh;
+    width: 100%;
     background-size: cover;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -27,3 +30,34 @@
         -ms-flex-align: center;
             align-items: center;
 }
+
+
+.social-footer {
+    padding: 1rem;
+    background: #8a8a8a;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .social-footer .social-footer-icons li:last-of-type {
+    margin-right: 0;
+  }
+  
+  .social-footer .social-footer-icons .fa {
+    font-size: 1.3rem;
+    color: #fefefe;
+  }
+  
+  .social-footer .social-footer-icons .fa:hover {
+    color: #4a4a4a;
+    transition: color 0.3s ease-in;
+  }
+  
+  
