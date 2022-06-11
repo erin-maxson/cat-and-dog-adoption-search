@@ -6,7 +6,7 @@
 .cats {
         background: url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
         height: 50vh;
-        width: 100%;
+        width: 45%;
         background-size: cover;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -14,14 +14,14 @@
         -webkit-align-items: center;
             -ms-flex-align: center;
                 align-items: center;
-        padding: 20px;
+        margin: 10px;
       
 }
 
 .dogs {
     background: url("./images/dogs.jpg") top right no-repeat;
     height: 50vh;
-    width: 100%;
+    width: 45%;
     background-size: cover;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -29,6 +29,7 @@
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+    margin: 10px;
 }
 
 
