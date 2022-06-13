@@ -32,6 +32,7 @@
     box-shadow: none;
     overflow: hidden;
     color: #0a0a0a;
+    padding: 25px;
   }
   
   .card-user-profile > :last-child {
