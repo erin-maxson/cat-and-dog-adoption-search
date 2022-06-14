@@ -1,0 +1,184 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoptable Animal Search</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/animal-search.css">
+</head>
+
+<header>
+    <!-- Search & Nav Bar -->
+    <div class="top-bar-container" data-sticky-container>
+        <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text">One Stop Adopt</li>
+                        <li class="has-submenu">
+                            <a href="#">Cats</a>
+                        </li>
+                        <li><a href="#">Dogs</a></li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                    <ul class="menu">
+                        <li><input type="search" placeholder="Search"></li>
+                        <li><button type="button" class="button">Search</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<body>
+
+    <main>
+
+        <div id="catFactArea" class="grid-x align-center">
+                <p class="randomCatFact">🐱 Random Cat Facts: <span id="catFacts">Cats are cool.</span> 🐱</p>
+              </div>
+            </a>
+          </div>
+
+          <div id="factBtn" class="grid-x align-center">
+          <a href="#" id="catFactBtn" class="hollow button success">Get Another Cat Fact!</a>
+         </div>
+
+
+        <div class="hero-section">
+            <div class="hero-section-text">
+                <h1>Ready to find a new furry friend?</h1>
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <h4 class="results-found">Number of Pets Found: <span id="results">4</span></h2>
+        </div>
+
+        <div class="grid-x align-center">
+            <div class="card-user-profile cell medium-3">
+                <img id="animal-photo" class="card-user-profile-img"
+                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
+                    alt="picture of adoptable pet" />
+                <div class="card-user-profile-content card-section">
+                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
+                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
+                    <ul class="card-user-profile-info">
+                        <li>Age: <span id="age">3 years old</span></li>
+                        <li>Size: <span id="size">10 pounds</span></li>
+                        <li>Breed: <span id="breed">Siamese</span> </li>
+                        <li>Gender: <span id="gender">Female</span></li>
+                        <li>Adoption Status: <span id="status">Up to Date</span></li>
+                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
+                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-user-profile-actions">
+                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                </div>
+            </div>
+
+            <div class="card-user-profile cell medium-3">
+                <img id="animal-photo" class="card-user-profile-img"
+                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
+                    alt="picture of adoptable pet" />
+                <div class="card-user-profile-content card-section">
+                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
+                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
+                    <ul class="card-user-profile-info">
+                        <li>Age: <span id="age">3 years old</span></li>
+                        <li>Size: <span id="size">10 pounds</span></li>
+                        <li>Breed: <span id="breed">Siamese</span> </li>
+                        <li>Gender: <span id="gender">Female</span></li>
+                        <li>Adoption Status: <span id="status">Up to Date</span></li>
+                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
+                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-user-profile-actions">
+                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                </div>
+            </div>
+
+
+            <div class="card-user-profile cell medium-3">
+                <img id="animal-photo" class="card-user-profile-img"
+                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
+                    alt="picture of adoptable pet" />
+                <div class="card-user-profile-content card-section">
+                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
+                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
+                    <ul class="card-user-profile-info">
+                        <li>Age: <span id="age">3 years old</span></li>
+                        <li>Size: <span id="size">10 pounds</span></li>
+                        <li>Breed: <span id="breed">Siamese</span> </li>
+                        <li>Gender: <span id="gender">Female</span></li>
+                        <li>Adoption Status: <span id="status">Up to Date</span></li>
+                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
+                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-user-profile-actions">
+                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                </div>
+            </div>
+
+
+            <div class="card-user-profile cell medium-3">
+                <img id="animal-photo" class="card-user-profile-img"
+                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
+                    alt="picture of adoptable pet" />
+                <div class="card-user-profile-content card-section">
+                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
+                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
+                    <ul class="card-user-profile-info">
+                        <li>Age: <span id="age">3 years old</span></li>
+                        <li>Size: <span id="size">10 pounds</span></li>
+                        <li>Breed: <span id="breed">Siamese</span> </li>
+                        <li>Gender: <span id="gender">Female</span></li>
+                        <li>Adoption Status: <span id="status">Up to Date</span></li>
+                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
+                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-user-profile-actions">
+                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="social-footer">
+        <div class="social-footer-left">
+            <a href="#"><img class="logo" src="https://placehold.it/150x30"></a>
+        </div>
+        <div class="social-footer-icons">
+            <ul class="menu simple">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
