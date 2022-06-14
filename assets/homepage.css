@@ -70,18 +70,13 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 75%;
   background: #fefefe;
   padding: 0.25rem;
   border-radius: 5px;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.hero-search-filter-form .divider {
-  background-color: #cacaca;
-  width: 1px;
 }
 
 .hero-search-filter-form label {
@@ -113,6 +108,10 @@
   border: 0;
   box-shadow: none;
 } 
+
+.adopt-h1 {
+  color: white;
+}
 
 .marketing-site-hero-content {
     padding: 20px;
