@@ -7,19 +7,17 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     color: white;
-  }
-
+}
 
 .results-found {
     margin-left: 20px;
 }
-
 
 .card-user-profile {
     position: relative;
@@ -28,8 +26,8 @@
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     margin-bottom: 1rem;
     border: 0;
     border-radius: 0;
@@ -38,21 +36,21 @@
     overflow: hidden;
     color: #0a0a0a;
     padding: 25px;
-  }
-  
-  .card-user-profile > :last-child {
+}
+
+.card-user-profile> :last-child {
     margin-bottom: 0;
-  }
-  
-  .card-user-profile:hover .card-user-profile-img {
+}
+
+.card-user-profile:hover .card-user-profile-img {
     opacity: 1;
-  }
-  
-  .card-user-profile-content {
+}
+
+.card-user-profile-content {
     position: relative;
-  }
-  
-  .card-user-profile-content::before {
+}
+
+.card-user-profile-content::before {
     position: absolute;
     content: '';
     top: -3.4375rem;
@@ -62,64 +60,62 @@
     border-style: solid;
     z-index: 0;
     border-color: transparent transparent transparent #fefefe;
-  }
-  
-  .card-user-profile-actions {
+}
+
+.card-user-profile-actions {
     -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
     padding: 1rem;
     background: #e6e6e6;
     background: #fefefe;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-  }
-  
-  .card-user-profile-actions > :last-child {
+}
+
+.card-user-profile-actions> :last-child {
     margin-bottom: 0;
-  }
-  
-  .card-user-profile-img {
+}
+
+.card-user-profile-img {
     max-width: 100%;
     opacity: 0.85;
     transition: all 0.25s ease;
-  }
-  
-  .card-user-profile-avatar {
+}
+
+.card-user-profile-avatar {
     position: absolute;
     bottom: 100%;
     left: 1rem;
     z-index: 2;
     max-width: 5.625rem;
-  }
-  
-  .card-user-profile-avatar img {
+}
+
+.card-user-profile-avatar img {
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
-  }
-  
-  .card-user-profile-name {
+}
+
+.card-user-profile-name {
     margin-bottom: 0;
     font-weight: 300;
     font-size: 1.5rem;
-  }
-  
-  .card-user-profile-button {
+}
+
+.card-user-profile-button {
     margin-bottom: 0;
     -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0;
-  }
-  
-  .card-user-profile-button + .card-user-profile-button {
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+}
+
+.card-user-profile-button+.card-user-profile-button {
     margin-left: 1rem;
-  }
-  
-  .card-user-profile-info {
+}
+
+.card-user-profile-info {
     font-size: 0.875rem;
     letter-spacing: 1px;
     opacity: 0.8;
-  }
-  
-  
+}
