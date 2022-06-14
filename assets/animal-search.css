@@ -1,15 +1,10 @@
-.randomFact {
-    display: flex;
-    align-items: center;
-    flex: 1 0 0;
-  }
-
 .randomCatFact {
     /* color: black; */
     margin-left: 0.75rem;
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 12px;
+    padding: 20px;
 }
   
 .hero-section {
