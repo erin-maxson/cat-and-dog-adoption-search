@@ -1,3 +1,11 @@
+/* not working at the moment -- want to recolor the nav bar, EM*/
+nav {
+  background-color: teal;
+}
+
+.sticky-topbar {
+  width: 100%;
+}
 
 .hero-search-filter {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/patio\ cats.jpg") center center no-repeat;
