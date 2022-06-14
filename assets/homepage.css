@@ -128,7 +128,7 @@
 }
 
 .cats {
-        background: url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
         height: 50vh;
         width: 45%;
         background-size: cover;
@@ -139,11 +139,10 @@
             -ms-flex-align: center;
                 align-items: center;
         margin: 20px;
-      
 }
 
 .dogs {
-    background: url("./images/dogs.jpg") top right no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("./images/dogs.jpg") top right no-repeat;
     height: 50vh;
     width: 45%;
     background-size: cover;
@@ -185,4 +184,15 @@
     transition: color 0.3s ease-in;
   }
   
+#h1Cats {
+  color: white;
+}
   
+#h1Dogs {
+  color: white;
+}
+
+#subheader {
+  color: white;
+}
+
