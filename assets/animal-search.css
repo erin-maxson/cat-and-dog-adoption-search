@@ -1,7 +1,7 @@
 .hero-section {
     background: url("./images/cat\ and\ dog\ pals.jpg") 50% no-repeat;
     background-size: cover;
-    height: 60vh;
+    height: 70vh;
     text-align: center;
     display: -webkit-flex;
     display: -ms-flexbox;
