@@ -1,3 +1,17 @@
+.randomFact {
+    display: flex;
+    align-items: center;
+    flex: 1 0 0;
+  }
+
+.randomCatFact {
+    /* color: black; */
+    margin-left: 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+  
 .hero-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/cat\ and\ dog\ pals.jpg") 50% no-repeat;
     background-size: cover;
@@ -146,4 +160,12 @@
   .social-footer .social-footer-icons .fa:hover {
     color: #4a4a4a;
     transition: color 0.3s ease-in;
+  }
+
+  #catFactBtn {
+    color: white;
+    font-size: 12px;
+    background-color: teal;
+    border-color: teal;
+    border-radius: 30px;
   }
