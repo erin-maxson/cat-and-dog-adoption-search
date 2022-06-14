@@ -87,8 +87,18 @@
 }
 
 .hero-search-filter-form input,
-.hero-search-filter-form .button {
+.hero-search-filter-form .submit {
   margin-bottom: 0;
+}
+
+.hero-search-filter-form .submit {
+  background-color: darkcyan;
+  padding: 10px;
+  color: white;
+}
+
+.fa-solid {
+  color: white;
 }
 
 @media screen and (max-width: 39.9375em) {
