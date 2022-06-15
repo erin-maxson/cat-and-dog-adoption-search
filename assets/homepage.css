@@ -5,6 +5,8 @@
 
 .top-bar {
   background: #5CE0B2;
+  padding: 0px;
+  justify-content: center;
 }
 
 .website-title {
