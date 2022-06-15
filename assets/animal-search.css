@@ -158,9 +158,12 @@ h1 {
   }
 
 a {
-    text-decoration: underline;
     color: white;
   }
+.link {
+  text-decoration: underline;
+  color: white;
+}
 
   #catFactBtn {
     color: white;
