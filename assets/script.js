@@ -1,5 +1,9 @@
+var animalCardContainerEl = document.getElementById('animal-card-container')
+
+// stores access token
 var accessToken;
 
+// inital tokenRequest
 function init(){
     tokenRequest();
 }
@@ -24,10 +28,16 @@ function tokenRequest() {
         .then(function (currentData) {
             // set the access token equal to what the server gives us
             accessToken = currentData.access_token;
+
+            // log the token
             console.log(accessToken)
+
+            // run the animal search using the accessToken
+            animalSearch(accessToken)
         })
 }
 
+// retreives animal information from api
 function animalSearch(accessToken) {
     fetch("https://api.petfinder.com/v2/animals?type=dog&page=2", {
         headers: {
@@ -41,12 +51,57 @@ function animalSearch(accessToken) {
         })
         .then(function (currentData) {
             console.log(currentData)
+
+            // display the animals' information
+            drawAnimalCards(currentData)
         })
 }
 
-function (drawAnimalCards)
+// displays the animals information in a card
+function drawAnimalCards(currentData) {
+    // for as many animals as there are
+    for (let i = 0; i < currentData.animals.length; i++) {
+        // create the animal card, set it's attributes and contents
+        var animalCard = document.createElement('div');
+        animalCard.setAttribute('class', 'animal-card');
+        animalCard.innerHTML = 
+        `<div class=“card-user-profile cell medium-3">
+        <img id=“animal-photo” class=“card-user-profile-img”
+        ${(() => {
+            if (currentData.animals[i].primary_photo_cropped ) {
+              return `
+              src='${currentData.animals[i].primary_photo_cropped.small}'
+              `
+            }
+            else{
+                return `src='./assets/images/dogs.jpg'`
+            }
+          })()}
+            src=“https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb”
+            alt=“picture of adoptable pet” />
+        <div class=“card-user-profile-content card-section”>
+            <p id=“animal-name” class=“card-user-profile-name”>${currentData.animals[i].name}</p>
+            <p id=“animal-location” class=“card-user-profile-status”>${currentData.animals[i].contact.address.city}, ${currentData.animals[i].contact.address.state}</p>
+            <ul class=“card-user-profile-info”>
+                <li>Age: <span id=“age”>${currentData.animals[i].age}</span></li>
+                <li>Size: <span id=“size”>${currentData.animals[i].size}</span></li>
+                <li>Breed: <span id=“breed”>${currentData.animals[i].breeds.primary}</span> </li>
+                <li>Gender: <span id=“gender”>${currentData.animals[i].gender}</span></li>
+                <li>Adoption Status: <span id=“status”>Available for adoption!</span></li>
+                <li>Spayed/Neutered: <span id=“fixed”>${currentData.animals[i].attributes.spayed_neutered}</span></li>
+            </ul>
+        </div>
+        <div class=“card-user-profile-actions”>
+            <a href=“#” id=“moreInfoBtn” class=“card-user-profile-button button hollow”>MORE INFO</a>
+            <a href=“#” id=“shelterLinkBtn” class=“card-user-profile-button button hollow secondary”>ADOPT
+                ME</a>
+        </div>
+    </div>`;
 
+    // append the animal card
+    animalCardContainerEl.appendChild(animalCard);
+    }
+}
+
+// start-up function
 init();
-
-
-// curl - H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJaenhldDR6eFk2aE1xNGpucDAwSzFWWVZuRnVkN0dnVUlQMUZMOUlWOFNaMVNmQWE2ZSIsImp0aSI6IjBlNDY2NDAyNzNiMTk0NTVjOWRkOTM3OWE4N2VkMDU0ZGY3YzhkYjdiNWNiYmIwYjNkNTA4YTY1OTQwMzNkODQyM2YwOTE2NTk4ZTU2MGIyIiwiaWF0IjoxNjU1MTcxMzUzLCJuYmYiOjE2NTUxNzEzNTMsImV4cCI6MTY1NTE3NDk1Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.K-kBNKK-fjVjeH3Z6g_oHidaAoH0EUVq1ihtZSuoWV2vE1EDbB5qsXxVCbNMQ5m_acTxDd53MzzJMS3P_n9kgiRCC7f70qeqOCNm-W9RWVwX_w77LeU9Eyv4PkxsZR1Ihh8to2q6YO-36onmUAoDqyYCWLe_fs0ZUXh2UciAAJkVlU6U_QP5DmbBlUIivlqExpXiZEvrg23hXcU6ZlzLwflOsRupnJVFo1XYR66Q61ky8rbI0qPCCnXVcga_BI0aNkNhs1vdl1uovgbRHzMSoRw7i6rUEIL5IYtMOSSRH6Ps2qFjmRmtuMkvQxDY0giPAI-qHu_l4nO-R02khK3NL" https://api.petfinder.com/v2/animals?type=dog&page=2
