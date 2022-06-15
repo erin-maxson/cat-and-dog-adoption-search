@@ -1,10 +1,21 @@
 /* not working at the moment -- want to recolor the nav bar, EM*/
-nav {
-  background-color: teal;
-}
-
 .sticky-topbar {
   width: 100%;
+}
+
+.top-bar {
+  background: #5CE0B2;
+}
+
+.website-title {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 25px;
+  padding: 10px;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .hero-search-filter {
@@ -100,7 +111,7 @@ nav {
 }
 
 .hero-search-filter-form .submit {
-  background-color: darkcyan;
+  background-color: #4CBA94;
   padding: 10px;
   color: white;
 }
@@ -148,6 +159,7 @@ nav {
             -ms-flex-align: center;
                 align-items: center;
         margin: 20px;
+        font-family: 'Fira Sans', sans-serif;
 }
 
 .dogs {
@@ -162,11 +174,12 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     margin: 20px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
 .social-footer {
-    padding: 1rem;
+    padding: 50px;
     background: #8a8a8a;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -177,6 +190,7 @@ nav {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    background-color: #4CBA94;
   }
   
   .social-footer .social-footer-icons li:last-of-type {
