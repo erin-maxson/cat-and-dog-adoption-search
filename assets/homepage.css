@@ -1,8 +1,4 @@
 /* not working at the moment -- want to recolor the nav bar, EM*/
-root {
-  font-family: 'Fira Sans', sans-serif;
-}
-
 nav {
   background-color: teal;
 }
@@ -133,6 +129,7 @@ nav {
 
 .adopt-h1 {
   color: white;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .marketing-site-hero-content {
