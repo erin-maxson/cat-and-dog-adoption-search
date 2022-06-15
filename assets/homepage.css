@@ -193,21 +193,13 @@ h1 {
         -ms-flex-pack: justify;
             justify-content: space-between;
     background-color: #4CBA94;
+    justify-content: center;
   }
+
+.logo {
+  justify-content: left;
+}
   
-  .social-footer .social-footer-icons li:last-of-type {
-    margin-right: 0;
-  }
-  
-  .social-footer .social-footer-icons .fa {
-    font-size: 1.3rem;
-    color: #fefefe;
-  }
-  
-  .social-footer .social-footer-icons .fa:hover {
-    color: #4a4a4a;
-    transition: color 0.3s ease-in;
-  }
   
 #h1Cats {
   color: white;
