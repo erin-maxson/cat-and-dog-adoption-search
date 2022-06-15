@@ -1,3 +1,9 @@
+.top-bar {
+    background: #4CBA94;
+    padding: 10px;
+    justify-content: center;
+  }
+
 .randomCatFact {
     /* color: black; */
     margin-left: 0.75rem;
@@ -132,7 +138,7 @@
 
 .social-footer {
     padding: 1rem;
-    background: #8a8a8a;
+    background: #4CBA94;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -141,7 +147,7 @@
             align-items: center;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+        justify-content: center;
   }
   
   .social-footer .social-footer-icons li:last-of-type {
@@ -161,8 +167,8 @@
   #catFactBtn {
     color: white;
     font-size: 12px;
-    background-color: teal;
-    border-color: teal;
+    background: #4CBA94;
+    border-color: #4CBA94;
     border-radius: 30px;
     padding: 12px;
     margin: 10;
