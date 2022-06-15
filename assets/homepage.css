@@ -4,7 +4,7 @@
 }
 
 .top-bar {
-  background: #5CE0B2;
+  background: #4CBA94;
   padding: 10px;
   justify-content: center;
 }
@@ -221,3 +221,10 @@ h1 {
   color: white;
 }
 
+#catsBtn {
+  background-color: #4CBA94;
+}
+
+#dogsBtn {
+  background-color: #4CBA94;
+}
