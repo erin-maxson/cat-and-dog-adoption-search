@@ -156,19 +156,10 @@ h1 {
         -ms-flex-pack: justify;
         justify-content: center;
   }
-  
-  .social-footer .social-footer-icons li:last-of-type {
-    margin-right: 0;
-  }
-  
-  .social-footer .social-footer-icons .fa {
-    font-size: 1.3rem;
-    color: #fefefe;
-  }
-  
-  .social-footer .social-footer-icons .fa:hover {
-    color: #4a4a4a;
-    transition: color 0.3s ease-in;
+
+a {
+    text-decoration: underline;
+    color: white;
   }
 
   #catFactBtn {

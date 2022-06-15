@@ -195,11 +195,14 @@ h1 {
     background-color: #4CBA94;
     justify-content: center;
   }
-
 .logo {
   justify-content: left;
 }
   
+a {
+  text-decoration: underline;
+  color: white;
+}
   
 #h1Cats {
   color: white;
