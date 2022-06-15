@@ -5,8 +5,8 @@
   }
 
 .randomCatFact {
-    /* color: black; */
     margin-left: 0.75rem;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 12px;
@@ -31,8 +31,13 @@
     color: white;
 }
 
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+}
+
 .results-found {
     margin-left: 20px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile {
@@ -64,6 +69,7 @@
 
 .card-user-profile-content {
     position: relative;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile-content::before {
@@ -124,6 +130,7 @@
     -webkit-flex: 1 0 0;
     -ms-flex: 1 0 0px;
     flex: 1 0 0;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile-button+.card-user-profile-button {
