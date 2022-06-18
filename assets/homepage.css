@@ -140,6 +140,12 @@ h1 {
   box-shadow: none;
 } 
 
+.selectDropdown {
+  border: none;
+  margin: 10px;
+}
+
+
 .adopt-h1 {
   color: white;
   font-family: 'Fira Sans', sans-serif;
@@ -195,11 +201,19 @@ h1 {
     background-color: #4CBA94;
     justify-content: center;
   }
-
 .logo {
   justify-content: left;
 }
-  
+
+ul {
+  text-decoration: underline;
+  color: white;
+}
+
+a {
+  text-decoration: underline;
+  color: white;
+}
   
 #h1Cats {
   color: white;

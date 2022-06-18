@@ -7,32 +7,22 @@
     <title>Adoptable Animal Search</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap">
     <link rel="stylesheet" href="./assets/animal-search.css">
 </head>
 
 <header>
     <!-- Search & Nav Bar -->
-    <div class="top-bar-container" data-sticky-container>
-        <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
-            <div class="top-bar">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text">One Stop Adopt</li>
-                        <li class="has-submenu">
-                            <a href="#">Cats</a>
-                        </li>
-                        <li><a href="#">Dogs</a></li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li><input type="search" placeholder="Search"></li>
-                        <li><button type="button" class="button">Search</button></li>
-                    </ul>
+    <nav>
+        <div class="top-bar-container" data-sticky-container>
+            <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
+                <div class="top-bar">
+                    <img src="assets/images/LocalPet 200 Center.png" class="localpet"
+                        alt="LocalPet logo with dog in heart">
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 
 </header>
 
@@ -43,47 +33,55 @@
         <div id="catFactArea" class="grid-x align-center">
             <p class="randomCatFact">🐱 Random Cat Facts: <span id="catFacts">Cats are cool.</span> 🐱</p>
         </div>
-        </a>
-        </div>
 
-        <div id="factBtn" class="grid-x align-center">
-            <a href="#" id="catFactBtn" class="hollow button success">Get Another Cat Fact!</a>
-        </div>
-
-
-        <div class="hero-section">
-            <div class="hero-section-text">
-                <h1>Ready to find a new furry friend?</h1>
+        <container class="hero-search-filter">
+            <div class="hero-search-filter-content">
+                <img class="hero-search-filter-logo" src="" alt="" />
+                <h2 class="adopt-h1">Ready to find a furry friend?</h2>
+                <form id="search-form" class="hero-search-filter-form" action="">
+                    <label for="findtext">Search</label>
+                    <select class="selectDropdown">
+                        <option id="catOption">Cats</option>
+                        <option id="DogOption">Dogs</option>
+                    </select>
+                    <div class="divider">&nbsp;</div>
+                    <label for="findlocate">Near</label>
+                    <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+                    <!-- need to come back and fix this search icon -- EM -->
+                    <button id="submitBtn" class="submit"><i class="fa-solid fa-magnifying-glass"></i>Find A
+                        Pet</i></button>
+                </form>
             </div>
-        </div>
-        <br>
+        </container>
 
         <div>
             <h4 class="results-found">Number of Pets Found: <span id="results">4</span></h2>
         </div>
 
         <div id="animal-card-container" class="grid-x align-center">
-            
+
         </div>
+
 
     </main>
 
     <footer class="social-footer">
         <div class="social-footer-left">
-            <a href="#"><img class="logo" src="https://placehold.it/150x30"></a>
+            <a href="#"><img class="logo" src="assets/images/Dog in Heart - 200.png"></a>
         </div>
         <div class="social-footer-icons">
-            <ul class="menu simple">
-                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <ul class="menu simple link">
+                <li><a class="link"
+                        href="https://www.petfinder.com/pet-adoption/dog-adoption/pet-adoption-checklist/">Adoption
+                        Checklist</a></li>
+                <li><a class="link" href="https://www.petfinder.com/videos/">Pet Care Videos</a>
                 </li>
-                <li><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="link" href="https://www.petfinder.com/dog-breeds/">Dog Breeds</a></li>
+                <li><a class="link" href="https://www.petfinder.com/cat-breeds/">Cat Breeds</a></li>
             </ul>
         </div>
     </footer>
 
-    <script src="./assets/script.js"></script>
 </body>
 
 </html>
