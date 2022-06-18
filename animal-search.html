@@ -40,12 +40,25 @@
          </div>
 
 
-        <div class="hero-section">
-            <div class="hero-section-text">
-                <h1>Ready to find a new furry friend?</h1>
+         <header class="hero-search-filter">
+            <div class="hero-search-filter-content">
+                <img class="hero-search-filter-logo" src="./assets/images/cat and dog pals.jpg" alt="" />
+                <h2 class="adopt-h1">Ready to find a furry friend?</h2>
+                <form id="search-form" class="hero-search-filter-form" action="">
+                    <label for="findtext">Search</label>
+                    <select class="selectDropdown">
+                        <option id="catOption">Cats</option>
+                        <option id="DogOption">Dogs</option>
+                      </select>
+                    <div class="divider">&nbsp;</div>
+                    <label for="findlocate">Near</label>
+                    <input id="findlocate" class="hero-search-filter-form-near" type="text"/>
+                    <!-- need to come back and fix this search icon -- EM -->
+                    <button id="submitBtn" class="submit"><i class="fa-solid fa-magnifying-glass"></i>Find A
+                        Pet</i></button>
+                </form>
             </div>
-        </div>
-        <br>
+        </header>
 
         <div>
             <h4 class="results-found">Number of Pets Found: <span id="results">4</span></h2>
