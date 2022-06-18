@@ -151,7 +151,7 @@ h1 {
     padding: 20px;
 }
 
-.card-user-profile {
+.animal-card {
     position: relative;
     z-index: 0;
     display: -webkit-flex;
@@ -170,11 +170,11 @@ h1 {
     padding: 25px;
 }
 
-.card-user-profile> :last-child {
+.animal-card > :last-child {
     margin-bottom: 0;
 }
 
-.card-user-profile:hover .card-user-profile-img {
+.animal-card:hover .card-user-profile-img {
     opacity: 1;
 }
 
