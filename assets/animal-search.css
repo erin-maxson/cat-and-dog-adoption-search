@@ -1,6 +1,12 @@
+.top-bar {
+    background: #4CBA94;
+    padding: 10px;
+    justify-content: center;
+  }
+
 .randomCatFact {
-    /* color: black; */
     margin-left: 0.75rem;
+    font-family: 'Fira Sans', sans-serif;
     font-size: 1.125rem;
     font-weight: 700;
     margin-bottom: 12px;
@@ -25,8 +31,13 @@
     color: white;
 }
 
+h1 {
+    font-family: 'Fira Sans', sans-serif;
+}
+
 .results-found {
     margin-left: 20px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile {
@@ -58,6 +69,7 @@
 
 .card-user-profile-content {
     position: relative;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile-content::before {
@@ -118,6 +130,7 @@
     -webkit-flex: 1 0 0;
     -ms-flex: 1 0 0px;
     flex: 1 0 0;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .card-user-profile-button+.card-user-profile-button {
@@ -132,7 +145,7 @@
 
 .social-footer {
     padding: 1rem;
-    background: #8a8a8a;
+    background: #4CBA94;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -141,28 +154,22 @@
             align-items: center;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+        justify-content: center;
   }
-  
-  .social-footer .social-footer-icons li:last-of-type {
-    margin-right: 0;
+
+a {
+    color: white;
   }
-  
-  .social-footer .social-footer-icons .fa {
-    font-size: 1.3rem;
-    color: #fefefe;
-  }
-  
-  .social-footer .social-footer-icons .fa:hover {
-    color: #4a4a4a;
-    transition: color 0.3s ease-in;
-  }
+.link {
+  text-decoration: underline;
+  color: white;
+}
 
   #catFactBtn {
     color: white;
     font-size: 12px;
-    background-color: teal;
-    border-color: teal;
+    background: #4CBA94;
+    border-color: #4CBA94;
     border-radius: 30px;
     padding: 12px;
     margin: 10;
