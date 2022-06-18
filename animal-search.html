@@ -17,10 +17,11 @@
         <div class="top-bar-container" data-sticky-container>
             <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
                 <div class="top-bar">
-                            <img src="assets/images/LocalPet 200 Center.png" class="localpet" alt="LocalPet logo with dog in heart">
-                    </div>
+                    <img src="assets/images/LocalPet 200 Center.png" class="localpet"
+                        alt="LocalPet logo with dog in heart">
                 </div>
             </div>
+        </div>
     </nav>
 
 </header>
@@ -32,28 +33,35 @@
         <div id="catFactArea" class="grid-x align-center">
             <p class="randomCatFact">🐱 Random Cat Facts: <span id="catFacts">Cats are cool.</span> 🐱</p>
         </div>
-        </a>
-        </div>
 
-        <div id="factBtn" class="grid-x align-center">
-            <a href="#" id="catFactBtn" class="hollow button success">Get Another Cat Fact!</a>
-        </div>
-
-
-        <div class="hero-section">
-            <div class="hero-section-text">
-                <h1>Ready to find a new furry friend?</h1>
+        <container class="hero-search-filter">
+            <div class="hero-search-filter-content">
+                <img class="hero-search-filter-logo" src="" alt="" />
+                <h2 class="adopt-h1">Ready to find a furry friend?</h2>
+                <form id="search-form" class="hero-search-filter-form" action="">
+                    <label for="findtext">Search</label>
+                    <select class="selectDropdown">
+                        <option id="catOption">Cats</option>
+                        <option id="DogOption">Dogs</option>
+                    </select>
+                    <div class="divider">&nbsp;</div>
+                    <label for="findlocate">Near</label>
+                    <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+                    <!-- need to come back and fix this search icon -- EM -->
+                    <button id="submitBtn" class="submit"><i class="fa-solid fa-magnifying-glass"></i>Find A
+                        Pet</i></button>
+                </form>
             </div>
-        </div>
-        <br>
+        </container>
 
         <div>
             <h4 class="results-found">Number of Pets Found: <span id="results">4</span></h2>
         </div>
 
         <div id="animal-card-container" class="grid-x align-center">
-            
+
         </div>
+
 
     </main>
 
@@ -63,7 +71,9 @@
         </div>
         <div class="social-footer-icons">
             <ul class="menu simple link">
-                <li><a class="link" href="https://www.petfinder.com/pet-adoption/dog-adoption/pet-adoption-checklist/">Adoption Checklist</a></li>
+                <li><a class="link"
+                        href="https://www.petfinder.com/pet-adoption/dog-adoption/pet-adoption-checklist/">Adoption
+                        Checklist</a></li>
                 <li><a class="link" href="https://www.petfinder.com/videos/">Pet Care Videos</a>
                 </li>
                 <li><a class="link" href="https://www.petfinder.com/dog-breeds/">Dog Breeds</a></li>
@@ -72,7 +82,6 @@
         </div>
     </footer>
 
-    <script src="./assets/script.js"></script>
 </body>
 
 </html>
