@@ -62,12 +62,12 @@ function animalSearch(accessToken) {
 // filters currentData by animals that have a photo and no numbers in their name
 function filterByNamePhoto(animal) {
 
-        if (animal.primary_photo_cropped != null && !(/\d/.test(animal.name))) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    if (animal.primary_photo_cropped != null && !(/\d/.test(animal.name))) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 // displays the animals information in a card
