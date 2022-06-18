@@ -17,10 +17,11 @@
         <div class="top-bar-container" data-sticky-container>
             <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
                 <div class="top-bar">
-                            <img src="assets/images/LocalPet 200 Center.png" class="localpet" alt="LocalPet logo with dog in heart">
-                    </div>
+                    <img src="assets/images/LocalPet 200 Center.png" class="localpet"
+                        alt="LocalPet logo with dog in heart">
                 </div>
             </div>
+        </div>
     </nav>
 
 </header>
@@ -30,35 +31,34 @@
     <main>
 
         <div id="catFactArea" class="grid-x align-center">
-                <p class="randomCatFact">🐱 Random Cat Facts: <span id="catFacts">Cats are cool.</span> 🐱</p>
-              </div>
-            </a>
-          </div>
+            <p class="randomCatFact">🐱 Random Cat Facts: <span id="catFacts">Cats are cool.</span> 🐱</p>
+        </div>
+        </a>
+        </div>
 
-          <div id="factBtn" class="grid-x align-center">
-          <a href="#" id="catFactBtn" class="hollow button success">Get Another Cat Fact!</a>
-         </div>
+        <div id="factBtn" class="grid-x align-center">
+            <a href="#" id="catFactBtn" class="hollow button success">Get Another Cat Fact!</a>
+        </div>
 
-
-         <header class="hero-search-filter">
+        <container class="hero-search-filter">
             <div class="hero-search-filter-content">
-                <img class="hero-search-filter-logo" src="./assets/images/cat and dog pals.jpg" alt="" />
+                <img class="hero-search-filter-logo" src="" alt="" />
                 <h2 class="adopt-h1">Ready to find a furry friend?</h2>
                 <form id="search-form" class="hero-search-filter-form" action="">
                     <label for="findtext">Search</label>
                     <select class="selectDropdown">
                         <option id="catOption">Cats</option>
                         <option id="DogOption">Dogs</option>
-                      </select>
+                    </select>
                     <div class="divider">&nbsp;</div>
                     <label for="findlocate">Near</label>
-                    <input id="findlocate" class="hero-search-filter-form-near" type="text"/>
+                    <input id="findlocate" class="hero-search-filter-form-near" type="text" />
                     <!-- need to come back and fix this search icon -- EM -->
                     <button id="submitBtn" class="submit"><i class="fa-solid fa-magnifying-glass"></i>Find A
                         Pet</i></button>
                 </form>
             </div>
-        </header>
+        </container>
 
         <div>
             <h4 class="results-found">Number of Pets Found: <span id="results">4</span></h2>
@@ -85,7 +85,8 @@
 
                 <div class="card-user-profile-actions">
                     <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
-                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT
+                        ME</a>
                 </div>
             </div>
 
@@ -109,32 +110,8 @@
 
                 <div class="card-user-profile-actions">
                     <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
-                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
-                </div>
-            </div>
-
-
-            <div class="card-user-profile cell medium-3">
-                <img id="animal-photo" class="card-user-profile-img"
-                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
-                    alt="picture of adoptable pet" />
-                <div class="card-user-profile-content card-section">
-                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
-                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
-                    <ul class="card-user-profile-info">
-                        <li>Age: <span id="age">3 years old</span></li>
-                        <li>Size: <span id="size">10 pounds</span></li>
-                        <li>Breed: <span id="breed">Siamese</span> </li>
-                        <li>Gender: <span id="gender">Female</span></li>
-                        <li>Adoption Status: <span id="status">Up to Date</span></li>
-                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
-                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
-                    </ul>
-                </div>
-
-                <div class="card-user-profile-actions">
-                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
-                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT
+                        ME</a>
                 </div>
             </div>
 
@@ -159,7 +136,34 @@
 
                 <div class="card-user-profile-actions">
                     <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
-                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT ME</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT
+                        ME</a>
+                </div>
+            </div>
+
+
+            <div class="card-user-profile cell medium-3">
+                <img id="animal-photo" class="card-user-profile-img"
+                    src="https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb"
+                    alt="picture of adoptable pet" />
+                <div class="card-user-profile-content card-section">
+                    <p id="animal-name" class="card-user-profile-name">Ariel</p>
+                    <p id="animal-location" class="card-user-profile-status">Columbus, OH</p>
+                    <ul class="card-user-profile-info">
+                        <li>Age: <span id="age">3 years old</span></li>
+                        <li>Size: <span id="size">10 pounds</span></li>
+                        <li>Breed: <span id="breed">Siamese</span> </li>
+                        <li>Gender: <span id="gender">Female</span></li>
+                        <li>Adoption Status: <span id="status">Up to Date</span></li>
+                        <li>Spayed/Neutered: <span id="fixed">Spayed</span></li>
+                        <li>Located at: <span id="shelter">Underdog Animal Rescue & Rehab</span></li>
+                    </ul>
+                </div>
+
+                <div class="card-user-profile-actions">
+                    <a href="#" id="moreInfoBtn" class="card-user-profile-button button hollow">MORE INFO</a>
+                    <a href="#" id="shelterLinkBtn" class="card-user-profile-button button hollow secondary">ADOPT
+                        ME</a>
                 </div>
             </div>
         </div>
@@ -172,7 +176,9 @@
         </div>
         <div class="social-footer-icons">
             <ul class="menu simple link">
-                <li><a class="link" href="https://www.petfinder.com/pet-adoption/dog-adoption/pet-adoption-checklist/">Adoption Checklist</a></li>
+                <li><a class="link"
+                        href="https://www.petfinder.com/pet-adoption/dog-adoption/pet-adoption-checklist/">Adoption
+                        Checklist</a></li>
                 <li><a class="link" href="https://www.petfinder.com/videos/">Pet Care Videos</a>
                 </li>
                 <li><a class="link" href="https://www.petfinder.com/dog-breeds/">Dog Breeds</a></li>
