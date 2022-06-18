@@ -4,7 +4,7 @@ var animalCardContainerEl = document.getElementById('animal-card-container')
 var accessToken;
 
 // inital tokenRequest
-function init(){
+function init() {
     tokenRequest();
 }
 
@@ -64,19 +64,19 @@ function drawAnimalCards(currentData) {
         // create the animal card, set it's attributes and contents
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
-        animalCard.innerHTML = 
-        `<div class=“card-user-profile cell medium-3">
+        animalCard.innerHTML =
+            `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-            if (currentData.animals[i].primary_photo_cropped ) {
-              return `
+                if (currentData.animals[i].primary_photo_cropped) {
+                    return `
               src='${currentData.animals[i].primary_photo_cropped.small}'
               `
-            }
-            else{
-                return `src='./assets/images/dogs.jpg'`
-            }
-          })()}
+                }
+                else {
+                    return `src='./assets/images/dogs.jpg'`
+                }
+            })()}
             src=“https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb”
             alt=“picture of adoptable pet” />
         <div class=“card-user-profile-content card-section”>
@@ -98,8 +98,8 @@ function drawAnimalCards(currentData) {
         </div>
     </div>`;
 
-    // append the animal card
-    animalCardContainerEl.appendChild(animalCard);
+        // append the animal card
+        animalCardContainerEl.appendChild(animalCard);
     }
 }
 
