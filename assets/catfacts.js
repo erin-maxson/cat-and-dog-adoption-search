@@ -1,6 +1,6 @@
-var meowFactsAPI = url('https://meowfacts.herokuapp.com/')
+// var meowFactsAPI = url(https://meowfacts.herokuapp.com/)
 
 
-fetch('meowFactsAPI')
+fetch('https://meowfacts.herokuapp.com/')
 .then(response => response.json())
 .then(data => console.log(data));
