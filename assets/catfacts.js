@@ -1,3 +1,13 @@
+var catFactsEl = document.getElementById('catFacts')
+
+
+
+
 fetch('https://meowfacts.herokuapp.com/')
-.then(response => response.json())
-.then(data => console.log(data));
+    .then(function (response){
+        return response.json();
+    })
+    .then(function (data){
+        console.log(data);
+        catFactsEl.textContent = data.data;
+    })
