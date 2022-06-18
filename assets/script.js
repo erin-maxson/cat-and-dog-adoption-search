@@ -3,6 +3,8 @@ var animalCardContainerEl = document.getElementById('animal-card-container')
 // stores access token
 var accessToken;
 
+var resultsPerPage = 18;
+
 // inital tokenRequest
 function init() {
     tokenRequest();
@@ -39,7 +41,7 @@ function tokenRequest() {
 
 // retreives animal information from api
 function animalSearch(accessToken) {
-    fetch("https://api.petfinder.com/v2/animals?type=dog&page=2", {
+    fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
         headers: {
             'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
@@ -53,14 +55,27 @@ function animalSearch(accessToken) {
             console.log(currentData)
 
             // display the animals' information
-            drawAnimalCards(currentData)
+            drawAnimalCards(currentData.animals.filter(filterByNamePhoto))
         })
 }
 
+// filters currentData by animals that have a photo and no numbers in their name
+function filterByNamePhoto(animal) {
+
+        if (animal.primary_photo_cropped != null && !(/\d/.test(animal.name))) {
+            return true;
+        }
+        else {
+            return false;
+        }
+}
+
 // displays the animals information in a card
-function drawAnimalCards(currentData) {
-    // for as many animals as there are
-    for (let i = 0; i < currentData.animals.length; i++) {
+function drawAnimalCards(animal) {
+    console.log(animal)
+
+    // for as many results we want to display on a page (18)
+    for (let i = 0; i < 18; i++) {
         // create the animal card, set it's attributes and contents
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
@@ -68,9 +83,9 @@ function drawAnimalCards(currentData) {
             `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-                if (currentData.animals[i].primary_photo_cropped) {
+                if (animal[i].primary_photo_cropped) {
                     return `
-              src='${currentData.animals[i].primary_photo_cropped.small}'
+              src='${animal[i].primary_photo_cropped.small}'
               `
                 }
                 else {
@@ -80,15 +95,15 @@ function drawAnimalCards(currentData) {
             src=“https://images.pexels.com/photos/5439/earth-space.jpg?h=350&auto=compress&cs=tinysrgb”
             alt=“picture of adoptable pet” />
         <div class=“card-user-profile-content card-section”>
-            <p id=“animal-name” class=“card-user-profile-name”>${currentData.animals[i].name}</p>
-            <p id=“animal-location” class=“card-user-profile-status”>${currentData.animals[i].contact.address.city}, ${currentData.animals[i].contact.address.state}</p>
+            <p id=“animal-name” class=“card-user-profile-name”>${animal[i].name}</p>
+            <p id=“animal-location” class=“card-user-profile-status”>${animal[i].contact.address.city}, ${animal[i].contact.address.state}</p>
             <ul class=“card-user-profile-info”>
-                <li>Age: <span id=“age”>${currentData.animals[i].age}</span></li>
-                <li>Size: <span id=“size”>${currentData.animals[i].size}</span></li>
-                <li>Breed: <span id=“breed”>${currentData.animals[i].breeds.primary}</span> </li>
-                <li>Gender: <span id=“gender”>${currentData.animals[i].gender}</span></li>
+                <li>Age: <span id=“age”>${animal[i].age}</span></li>
+                <li>Size: <span id=“size”>${animal[i].size}</span></li>
+                <li>Breed: <span id=“breed”>${animal[i].breeds.primary}</span> </li>
+                <li>Gender: <span id=“gender”>${animal[i].gender}</span></li>
                 <li>Adoption Status: <span id=“status”>Available for adoption!</span></li>
-                <li>Spayed/Neutered: <span id=“fixed”>${currentData.animals[i].attributes.spayed_neutered}</span></li>
+                <li>Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}</span></li>
             </ul>
         </div>
         <div class=“card-user-profile-actions”>
