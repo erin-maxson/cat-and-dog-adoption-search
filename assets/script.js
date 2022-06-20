@@ -81,6 +81,7 @@ function drawAnimalCards(animal) {
     // for as many results we want to display on a page (18)
     for (let i = 0; i < 18; i++) {
         // create the animal card, set it's attributes and contents
+        console.log(animal[i].url)
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
         animalCard.innerHTML =
@@ -117,9 +118,7 @@ function drawAnimalCards(animal) {
             </ul>
         </div>
         <div class=“card-user-profile-actions”>
-            <a href=“#” id=“moreInfoBtn” class=“card-user-profile-button button hollow”>MORE INFO</a>
-            <a href=“#” id=“shelterLinkBtn” class=“card-user-profile-button button hollow secondary”>ADOPT
-                ME</a>
+            <a href=${animal[i].url} id=“moreInfoBtn” class=“card-user-profile-button button hollow”>ADOPT ME</a>
         </div>
     </div>`;
 
