@@ -75,6 +75,7 @@ function filterByNamePhoto(animal) {
 function drawAnimalCards(animal) {
     console.log(animal)
 
+    // displays number of results
     resultsEl.textContent = animal.length;
 
     // for as many results we want to display on a page (18)
@@ -105,14 +106,12 @@ function drawAnimalCards(animal) {
                 <li>Size: <span id=“size”>${animal[i].size}</span></li>
                 <li>Breed: <span id=“breed”>${animal[i].breeds.primary}</span> </li>
                 <li>Gender: <span id=“gender”>${animal[i].gender}</span></li>
-                <li>Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}${(() => {
-                if (animal[i].primary_photo_cropped) {
-                    return `
-                  src='${animal[i].primary_photo_cropped.small}'
-                  `
+                <li>Spayed/Neutered: <span id=“fixed”>${(() => {
+                if (animal[i].attributes.spayed_neutered === true) {
+                    return `Yes`
                 }
                 else {
-                    return `src='./assets/images/dogs.jpg'`
+                    return `No`
                 }
             })()}</span></li>
             </ul>
