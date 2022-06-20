@@ -1,4 +1,5 @@
 var animalCardContainerEl = document.getElementById('animal-card-container')
+var resultsEl = document.getElementById('results')
 
 // stores access token
 var accessToken;
@@ -74,6 +75,8 @@ function filterByNamePhoto(animal) {
 function drawAnimalCards(animal) {
     console.log(animal)
 
+    resultsEl.textContent = animal.length;
+
     // for as many results we want to display on a page (18)
     for (let i = 0; i < 18; i++) {
         // create the animal card, set it's attributes and contents
@@ -102,8 +105,16 @@ function drawAnimalCards(animal) {
                 <li>Size: <span id=“size”>${animal[i].size}</span></li>
                 <li>Breed: <span id=“breed”>${animal[i].breeds.primary}</span> </li>
                 <li>Gender: <span id=“gender”>${animal[i].gender}</span></li>
-                <li>Adoption Status: <span id=“status”>Available for adoption!</span></li>
-                <li>Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}</span></li>
+                <li>Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}${(() => {
+                if (animal[i].primary_photo_cropped) {
+                    return `
+                  src='${animal[i].primary_photo_cropped.small}'
+                  `
+                }
+                else {
+                    return `src='./assets/images/dogs.jpg'`
+                }
+            })()}</span></li>
             </ul>
         </div>
         <div class=“card-user-profile-actions”>
