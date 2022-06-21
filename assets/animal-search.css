@@ -176,18 +176,19 @@ h1 {
   padding: 20px;
   margin: 10px;
   max-height: 600px;
+  max-width: 500px;
 }
 
-img, #animal-card {
-  height: 200px;
-  width: 500;
+#animal-photo img {
+  height: 226.3px;
+  max-width: 226.3px;
 }
 
 .card-user-profile > :last-child {
   margin-bottom: 0;
 }
 
-#animal-card .card-user-profile:hover .card-user-profile-img {
+#animal-card.card-user-profile:hover .card-user-profile-img {
   opacity: 1;
 }
 
@@ -270,6 +271,33 @@ p, #animal-location {
   font-size: 15px;
   font-weight: bold;
 }
+
+
+
+
+.button-icon-badge {
+  display: flex;
+  padding: 1rem 2rem;
+  background: #4CBA94;
+  justify-content: center;
+  width: 150px;
+}
+
+.button-icon-badge .button-icon-badge-text {
+  padding: 0 0.5rem;
+}
+
+.button-icon-badge .badge {
+  font-size: 0.8em;
+  padding: 0.4rem;
+}
+
+.button-icon-badge .fa {
+  color: #fefefe;
+  font-size: 1rem;
+}
+
+
 
 .social-footer {
   padding: 1rem;
