@@ -1,3 +1,8 @@
+body {
+  background-color: #e6e6e6;
+  font-family: 'Fira Sans', sans-serif
+}
+
 .top-bar {
     background: #4CBA94;
     padding: 10px;
@@ -151,125 +156,164 @@ h1 {
     padding: 20px;
 }
 
+
 .animal-card {
-    position: relative;
-    z-index: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    border: 0;
-    border-radius: 0;
-    background: #fefefe;
-    box-shadow: none;
-    overflow: hidden;
-    color: #0a0a0a;
-    padding: 25px;
+  position: relative;
+  z-index: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+  border: 0;
+  border-radius: 0;
+  background: #fefefe;
+  box-shadow: none;
+  overflow: hidden;
+  color: #0a0a0a;
+  padding: 20px;
+  margin: 10px;
+  max-height: 600px;
+  max-width: 500px;
 }
 
-.animal-card > :last-child {
-    margin-bottom: 0;
+#animal-photo img {
+  height: 226.3px;
+  max-width: 226.3px;
 }
 
-.animal-card:hover .card-user-profile-img {
-    opacity: 1;
+.card-user-profile > :last-child {
+  margin-bottom: 0;
+}
+
+#animal-card.card-user-profile:hover .card-user-profile-img {
+  opacity: 1;
 }
 
 .card-user-profile-content {
-    position: relative;
-    font-family: 'Fira Sans', sans-serif;
+  position: relative;
 }
 
 .card-user-profile-content::before {
-    position: absolute;
-    content: '';
-    top: -3.4375rem;
-    left: -1.875rem;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    z-index: 0;
-    border-color: transparent transparent transparent #fefefe;
+  position: absolute;
+  content: '';
+  top: -3.4375rem;
+  left: -1.875rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 3.4375rem 0 0 31.25rem;
+  z-index: 0;
+  border-color: transparent transparent transparent #fefefe;
 }
 
 .card-user-profile-actions {
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    padding: 1rem;
-    background: #e6e6e6;
-    background: #fefefe;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding: 1rem;
+  background: #e6e6e6;
+  background: #fefefe;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.card-user-profile-actions> :last-child {
-    margin-bottom: 0;
-}
-
-.card-user-profile-img {
-    max-width: 100%;
-    opacity: 0.85;
-    transition: all 0.25s ease;
+.card-user-profile-actions > :last-child {
+  margin-bottom: 0px;
 }
 
 .card-user-profile-name {
-    margin-bottom: 0;
-    font-weight: 300;
-    font-size: 1.5rem;
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .card-user-profile-button {
-    margin-bottom: 0;
-    -webkit-flex: 1 0 0;
-    -ms-flex: 1 0 0px;
-    flex: 1 0 0;
-    font-family: 'Fira Sans', sans-serif;
+  margin-bottom: 0;
+  -webkit-flex: 1 0 0;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
 }
 
-.card-user-profile-button+.card-user-profile-button {
-    margin-left: 1rem;
+.card-user-profile-button + .card-user-profile-button {
+  margin-left: 1rem;
 }
 
 .card-user-profile-info {
-    font-size: 0.875rem;
-    letter-spacing: 1px;
-    opacity: 0.8;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }
 
-.social-footer {
-    padding: 1rem;
-    background: #4CBA94;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: center;
-  }
-
-a {
-    color: white;
-  }
 .link {
   text-decoration: underline;
   color: white;
 }
 
-  #catFactBtn {
-    color: white;
-    font-size: 12px;
-    background: #4CBA94;
-    border-color: #4CBA94;
-    border-radius: 30px;
-    padding: 12px;
-    margin: 10;
-    
+
+a, #moreInfoBtn {
+    color: black;
+    border-color: black;
+    border: solid 1px;
+    padding: 10px;
   }
+
+p, #animal-name {
+  font-size: 0px;
+  font-weight: bold;
+  padding: 0px;
+}
+
+p, #animal-location {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+
+.button-icon-badge {
+  display: flex;
+  padding: 1rem 2rem;
+  background: #4CBA94;
+  justify-content: center;
+  width: 150px;
+}
+
+.button-icon-badge .button-icon-badge-text {
+  padding: 0 0.5rem;
+}
+
+.button-icon-badge .badge {
+  font-size: 0.8em;
+  padding: 0.4rem;
+}
+
+.button-icon-badge .fa {
+  color: #fefefe;
+  font-size: 1rem;
+}
+
+
+
+.social-footer {
+  padding: 1rem;
+  background: #4CBA94;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logo {
+  height: 100px;
+
+}
