@@ -81,7 +81,6 @@ function drawAnimalCards(animal) {
     // for as many results we want to display on a page (18)
     for (let i = 0; i < 18; i++) {
         // create the animal card, set it's attributes and contents
-        console.log(animal[i].url)
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
         animalCard.innerHTML =
