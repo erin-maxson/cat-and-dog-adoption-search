@@ -175,13 +175,10 @@ h1 {
   color: #0a0a0a;
   padding: 20px;
   margin: 10px;
-  max-height: 600px;
-  max-width: 500px;
-}
-
-#animal-photo img {
-  height: 226.3px;
-  max-width: 226.3px;
+  height: 530px;
+  width: 300px;
+  object-fit: contain;
+  
 }
 
 .card-user-profile > :last-child {
@@ -227,8 +224,9 @@ h1 {
 
 .card-user-profile-name {
   margin-bottom: 0;
-  font-weight: 300;
   font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .card-user-profile-button {
@@ -261,18 +259,12 @@ a, #moreInfoBtn {
     padding: 10px;
   }
 
-p, #animal-name {
-  font-size: 0px;
-  font-weight: bold;
-  padding: 0px;
-}
 
 p, #animal-location {
   font-size: 15px;
   font-weight: bold;
+  padding: 0px;
 }
-
-
 
 
 .button-icon-badge {
@@ -315,5 +307,4 @@ p, #animal-location {
 
 .logo {
   height: 100px;
-
 }
