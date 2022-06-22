@@ -314,3 +314,8 @@ p#animal-location {
   height: 100px;
 
 }
+
+a + #shelterLinkBtn {
+  background-color: #4CBA94;
+  color: white;
+}
