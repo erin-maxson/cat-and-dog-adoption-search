@@ -1,9 +1,16 @@
 var animalCardContainerEl = document.getElementById('animal-card-container')
 var resultsEl = document.getElementById('results')
+var animalTypeEl = document.getElementById('animalType')
+var animalAgeEl = document.getElementById('animalAge')
+var animalSizeEl = document.getElementById('animalSize')
+var animalGenderEl  = document.getElementById('animalGender')
+var findLocateEl = document.getElementById('findlocate')
+var submitBtnEl = document.getElementById('submitBtn')
 
 // stores access token
 var accessToken;
 
+// results to show per page
 var resultsPerPage = 18;
 
 // inital tokenRequest
