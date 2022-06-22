@@ -175,11 +175,11 @@ h1 {
   color: #0a0a0a;
   padding: 20px;
   margin: 10px;
-  max-height: 600px;
-  max-width: 500px;
+  height: 520px;
+  width: 300px;
 }
 
-#animal-photo img {
+img {
   height: 226.3px;
   max-width: 226.3px;
 }
@@ -315,5 +315,4 @@ p, #animal-location {
 
 .logo {
   height: 100px;
-
 }
