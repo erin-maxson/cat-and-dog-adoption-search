@@ -177,13 +177,8 @@ h1 {
   margin: 10px;
   height: 530px;
   width: 300px;
+  object-fit: contain;
   
-}
-
-img {
-  height: 226.3px;
-  max-width: auto;
-  justify-content: center;
 }
 
 .card-user-profile > :last-child {
@@ -229,8 +224,9 @@ img {
 
 .card-user-profile-name {
   margin-bottom: 0;
-  font-weight: 300;
   font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .card-user-profile-button {
@@ -268,10 +264,7 @@ p, #animal-location {
   font-size: 15px;
   font-weight: bold;
   padding: 0px;
-  text-align: center;
 }
-
-
 
 
 .button-icon-badge {
