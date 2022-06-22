@@ -19,6 +19,7 @@ var resultsPerPage = 18;
 function init() {
     tokenRequest();
     console.log(accessToken)
+    console.log(tokenObject)
 }
 
 
@@ -46,10 +47,11 @@ function tokenRequest() {
 }
 
 // retreives animal information from api
-function animalSearch(accessToken) {
+function animalSearch(tokenObject) {
     fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
+        mode: "no-cors",
         headers: {
-            'Authorization': 'Bearer ' + accessToken,
+            'Authorization': 'Bearer ' + tokenObject.token,
             'Content-Type': 'application/json',
         }
     })
@@ -134,4 +136,4 @@ function drawAnimalCards(animal) {
 // start-up function
 init();
 
-submitBtnEl.addEventListener('click', animalSearch(accessToken));
+submitBtnEl.addEventListener('click', animalSearch(tokenObject));
