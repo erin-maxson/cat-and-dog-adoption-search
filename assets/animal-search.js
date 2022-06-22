@@ -18,7 +18,7 @@ var resultsPerPage = 18;
 // inital tokenRequest
 function init() {
     tokenRequest();
-    console.log(tokenObject)
+    console.log(accessToken)
 }
 
 
@@ -133,3 +133,5 @@ function drawAnimalCards(animal) {
 
 // start-up function
 init();
+
+submitBtnEl.addEventListener('click', animalSearch(accessToken));

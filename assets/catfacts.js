@@ -2,7 +2,6 @@ var catFactsEl = document.getElementById('catFacts')
 
 var factContainsInvalid;
 var factContainsUnsubscribe;
-var validFact;
 
 // fetches cat facts from the meowfacts api
 function grabCatFact() {
@@ -22,22 +21,13 @@ function grabCatFact() {
         // if any cases are true
         if (factContainsInvalid || factContainsUnsubscribe) {
             // is not a valid fact
-            validFact = false;
+            grabCatFact();
         }
         else {
             // is a valid fact
-            validFact = true;
-        }
-        console.log(validFact)
-
-        // if it's a valid fact, display it
-        if (validFact) {
             catFactsEl.textContent = data.data;
         }
-        // if not, call the api again
-        else {
-            grabCatFact();
-        }
+        console.log(validFact)
     })
 }
 
