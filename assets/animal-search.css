@@ -175,13 +175,15 @@ h1 {
   color: #0a0a0a;
   padding: 20px;
   margin: 10px;
-  height: 520px;
+  height: 530px;
   width: 300px;
+  
 }
 
 img {
   height: 226.3px;
-  max-width: 226.3px;
+  max-width: auto;
+  justify-content: center;
 }
 
 .card-user-profile > :last-child {
@@ -261,15 +263,12 @@ a, #moreInfoBtn {
     padding: 10px;
   }
 
-p, #animal-name {
-  font-size: 0px;
-  font-weight: bold;
-  padding: 0px;
-}
 
 p, #animal-location {
   font-size: 15px;
   font-weight: bold;
+  padding: 0px;
+  text-align: center;
 }
 
 
