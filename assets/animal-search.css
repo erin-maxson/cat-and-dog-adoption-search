@@ -177,6 +177,7 @@ h1 {
 img{
   height: 226.3px;
   max-width: 226.3px;
+
 }
 
 img.localpet {
@@ -214,6 +215,7 @@ img.localpet {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  background-color: #4CBA94;
 }
 
 .card-user-profile-actions > :last-child {
@@ -256,13 +258,13 @@ a#moreInfoBtn {
     padding: 10px;
   }
 
-#animal-name {
-  font-size: 0px;
+p#animal-name {
+  font-size: 20px;
   font-weight: bold;
   padding: 0px;
 }
 
-#animal-location {
+p#animal-location {
   font-size: 15px;
   font-weight: bold;
 }

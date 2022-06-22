@@ -107,7 +107,6 @@ function drawAnimalCards(animal) {
             </ul>
         </div>
         <div class=“card-user-profile-actions”>
-            <a href=“#” id=“moreInfoBtn” class=“card-user-profile-button button hollow”>MORE INFO</a>
             <a href=“#” id=“shelterLinkBtn” class=“card-user-profile-button button hollow secondary”>ADOPT
                 ME</a>
         </div>
