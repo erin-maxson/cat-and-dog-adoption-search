@@ -10,12 +10,15 @@ var submitBtnEl = document.getElementById('submitBtn')
 // stores access token
 var accessToken;
 
+var tokenObject = {};
+
 // results to show per page
 var resultsPerPage = 18;
 
 // inital tokenRequest
 function init() {
     tokenRequest();
+    console.log(tokenObject)
 }
 
 
@@ -36,14 +39,9 @@ function tokenRequest() {
             return response.json();
         })
         .then(function (currentData) {
-            // set the access token equal to what the server gives us
             accessToken = currentData.access_token;
-
-            // log the token
-            console.log(accessToken)
-
-            // run the animal search using the accessToken
-            animalSearch(accessToken)
+            // set the access token equal to what the server gives us
+            tokenObject.token = currentData.access_token;
         })
 }
 
