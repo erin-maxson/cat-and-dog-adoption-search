@@ -1,14 +1,17 @@
+/* body text and color formatting */
 body {
   background-color: #e6e6e6;
   font-family: 'Fira Sans', sans-serif
 }
 
+/* Nav/top bar formatting */
 .top-bar {
     background: #4CBA94;
     padding: 10px;
     justify-content: center;
   }
 
+  /* Cat Fact Formatting */
 .randomCatFact {
     margin-left: 0.75rem;
     font-family: 'Fira Sans', sans-serif;
@@ -17,8 +20,10 @@ body {
     margin-bottom: 12px;
     padding-top: 20px;
     padding-bottom: 0px;
+    text-align: center;
 }
   
+/* hero image formatting */
 .hero-search-filter {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/cat\ and\ dog\ pals.jpg") center center no-repeat;
     height: 70vh;
@@ -32,10 +37,7 @@ body {
     color: white;
   }
   
-  .hero-search-filter-logo {
-    margin-bottom: 2rem;
-  }
-  
+  /* formats the full search bar area -- full width, height, etc, */
   .hero-search-filter-content {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -53,18 +55,22 @@ body {
             justify-content: center;
   }
   
+/* wrap function for the search bar area */
   .hero-search-filter-menu {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
   }
   
+  /* media screen and width for search bar */
   @media screen and (max-width: 39.9375em) {
     .hero-search-filter-menu li {
       -webkit-flex-basis: 50%;
           -ms-flex-preferred-size: 50%;
               flex-basis: 50%;
     }
+    
+  /* formatting of search bar white area w/ links */
     .hero-search-filter-menu li a {
       -webkit-justify-content: center;
           -ms-flex-pack: center;
@@ -72,21 +78,7 @@ body {
     }
   }
   
-  .hero-search-filter-menu a {
-    color: #fefefe;
-    font-weight: bold;
-  }
-  
-  .hero-search-filter-menu a .fa {
-    font-size: 1.125rem;
-    font-weight: normal;
-    text-decoration: none;
-  }
-  
-  .hero-search-filter-menu a:hover {
-    text-decoration: underline;
-  }
-  
+  /* more formatting for the filter form areas */
   .hero-search-filter-form {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -100,6 +92,7 @@ body {
             align-items: center;
   }
   
+  /* Form label formatting */
   .hero-search-filter-form label {
     margin-right: 0.75rem;
     margin-left: 0.75rem;
@@ -107,56 +100,59 @@ body {
     font-weight: bold;
   }
   
+  /* margin for form input and submit button */
   .hero-search-filter-form input,
   .hero-search-filter-form .submit {
     margin-bottom: 0;
   }
   
+  /* form submit button formatting */
   .hero-search-filter-form .submit {
     background-color: #4CBA94;
     padding: 10px;
     color: white;
   }
   
-  .fa-solid {
-    color: white;
-  }
-  
+  /* media query and width for the form filter area */
   @media screen and (max-width: 39.9375em) {
     .hero-search-filter-form {
       width: 95%;
     }
   }
   
+  /* border and shadow for search and near form inputs */
   .hero-search-filter-form-find,
   .hero-search-filter-form-near {
     border: 0;
     box-shadow: none;
   }
   
+  /* not allowing any interactivity for highlighted form inputs */
   .hero-search-filter-form-find:focus,
   .hero-search-filter-form-near:focus {
     border: 0;
     box-shadow: none;
   } 
   
-
+/* formatting for the cats + dogs dropdown */
 .selectDropdown {
     border: none;
     margin: 10px;
   }
 
+/* formatting for "ready to find a furry friend h1" */
 h1 {
     font-family: 'Fira Sans', sans-serif;
 }
 
+/* formatting for results found option */
 .results-found {
     margin-left: 20px;
     font-family: 'Fira Sans', sans-serif;
     padding: 20px;
 }
 
-
+/* formatting the outside of the animal search card */
 .animal-card {
   position: relative;
   z-index: 0;
@@ -170,16 +166,15 @@ h1 {
   border: 0;
   border-radius: 0;
   background: #fefefe;
-  box-shadow: none;
   overflow: hidden;
-  color: #0a0a0a;
   padding: 20px;
   margin: 10px;
   max-height: 600px;
   max-width: 500px;
 }
 
-#animal-photo img {
+/* search card and image formatting */
+img{
   height: 226.3px;
   max-width: 226.3px;
 }
@@ -254,20 +249,20 @@ h1 {
 }
 
 
-a, #moreInfoBtn {
+a#moreInfoBtn {
     color: black;
     border-color: black;
     border: solid 1px;
     padding: 10px;
   }
 
-p, #animal-name {
+#animal-name {
   font-size: 0px;
   font-weight: bold;
   padding: 0px;
 }
 
-p, #animal-location {
+#animal-location {
   font-size: 15px;
   font-weight: bold;
 }
