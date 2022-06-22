@@ -98,12 +98,12 @@ function drawAnimalCards(animal) {
             <p id=“animal-name” class=“card-user-profile-name”>${animal[i].name}</p>
             <p id=“animal-location” class=“card-user-profile-status”>${animal[i].contact.address.city}, ${animal[i].contact.address.state}</p>
             <ul class=“card-user-profile-info”>
-                <li id="age">Age: <span id=“age”>${animal[i].age}</span></li>
-                <li id="size">Size: <span id=“size”>${animal[i].size}</span></li>
-                <li id="breed">Breed: <span id=“breed”>${animal[i].breeds.primary}</span> </li>
-                <li id="gender">Gender: <span id=“gender”>${animal[i].gender}</span></li>
-                <li id="adopt">Adoption Status: <span id=“status”>Available for adoption!</span></li>
-                <li id="fixed">Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}</span></li>
+                <li id="ageTitle">Age: <span id=“age”>${animal[i].age}</span></li>
+                <li id="sizeTitle">Size: <span id=“size”>${animal[i].size}</span></li>
+                <li id="breedTitle">Breed: <span id=“breed”>${animal[i].breeds.primary}</span> </li>
+                <li id="genderTitle">Gender: <span id=“gender”>${animal[i].gender}</span></li>
+                <li id="adoptTitle">Adoption Status: <span id=“status”>Available for adoption!</span></li>
+                <li id="fixedTitle">Spayed/Neutered: <span id=“fixed”>${animal[i].attributes.spayed_neutered}</span></li>
             </ul>
         </div>
         <div class=“card-user-profile-actions”>
