@@ -179,12 +179,12 @@ img{
   max-width: 226.3px;
 }
 
-.card-user-profile > :last-child {
-  margin-bottom: 0;
+img.localpet {
+  height: auto;
 }
 
-#animal-card.card-user-profile:hover .card-user-profile-img {
-  opacity: 1;
+.card-user-profile > :last-child {
+  margin-bottom: 0;
 }
 
 .card-user-profile-content {
