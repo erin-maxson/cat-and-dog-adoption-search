@@ -175,9 +175,8 @@ h1 {
   color: #0a0a0a;
   padding: 20px;
   margin: 10px;
-  height: 530px;
+  height: 520px;
   width: 300px;
-  object-fit: contain;
   
 }
 
@@ -189,8 +188,15 @@ h1 {
   opacity: 1;
 }
 
+
+#animal-photo.card-user-profile-img img {
+  height: 260px;
+  width: 260px;
+}
+
 .card-user-profile-content {
   position: relative;
+  padding-top: 10px;
 }
 
 .card-user-profile-content::before {
@@ -252,7 +258,7 @@ h1 {
 }
 
 
-a, #moreInfoBtn {
+#moreInfoBtn {
     color: black;
     border-color: black;
     border: solid 1px;
@@ -267,26 +273,18 @@ p, #animal-location {
 }
 
 
-.button-icon-badge {
+.loadDiv
+{
   display: flex;
-  padding: 1rem 2rem;
-  background: #4CBA94;
   justify-content: center;
-  width: 150px;
+  align-items: center;
+  padding: 20px;
 }
 
-.button-icon-badge .button-icon-badge-text {
-  padding: 0 0.5rem;
-}
-
-.button-icon-badge .badge {
-  font-size: 0.8em;
-  padding: 0.4rem;
-}
-
-.button-icon-badge .fa {
-  color: #fefefe;
-  font-size: 1rem;
+.loadBtn {
+  background-color: #4CBA94;
+  color: white;
+  padding: 20px;
 }
 
 
