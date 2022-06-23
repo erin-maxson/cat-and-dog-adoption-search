@@ -13,7 +13,7 @@ var loadMoreBtnEl = document.getElementById('loadMoreBtn')
 var accessToken;
 
 // results to show per page
-var resultsPerPage = 18;
+var resultsPerPage = 20;
 var pageCount = 1;
 
 // inital tokenRequest
@@ -48,7 +48,7 @@ function tokenRequest() {
 function animalSearch(event) {
     event.preventDefault();
 
-    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=1&limit=100`;
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&limit=100`;
 
     accessToken = sessionStorage.getItem('token');
     fetch(currentUrl, {
@@ -80,10 +80,11 @@ function filterByNamePhoto(animal) {
     }
 }
 
-function loadMore(){
+function loadMore(event){
     pageCount++;
     animalCardContainerEl.innerHTML = '';
     resultsEl.innerHTML = '';
+    animalSearch(event);
 }
 
 // displays the animals information in a card
@@ -94,7 +95,7 @@ function drawAnimalCards(animal) {
     resultsEl.textContent = 'Number of Pets Found: ' + animal.length;
 
     // for as many results we want to display on a page (18)
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < animal.length; i++) {
         // create the animal card, set it's attributes and contents
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
