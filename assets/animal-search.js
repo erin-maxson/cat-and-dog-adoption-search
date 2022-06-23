@@ -6,12 +6,15 @@ var animalSizeEl = document.getElementById('animalSize')
 var animalGenderEl = document.getElementById('animalGender')
 var findLocateEl = document.getElementById('findlocate')
 var submitBtnEl = document.getElementById('submitBtn')
+var numPetsTextEl = document.getElementById('num-pets-text')
+var loadMoreBtnEl = document.getElementById('loadMoreBtn')
 
 // stores access token
 var accessToken;
 
 // results to show per page
-var resultsPerPage = 18;
+var resultsPerPage = 20;
+var pageCount = 1;
 
 // inital tokenRequest
 function init() {
@@ -45,7 +48,7 @@ function tokenRequest() {
 function animalSearch(event) {
     event.preventDefault();
 
-    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=1&limit=100`;
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&limit=100`;
 
     accessToken = sessionStorage.getItem('token');
     fetch(currentUrl, {
@@ -77,15 +80,23 @@ function filterByNamePhoto(animal) {
     }
 }
 
+function loadMore(event){
+    pageCount++;
+    animalSearch(event);
+}
+
 // displays the animals information in a card
 function drawAnimalCards(animal) {
     console.log(animal)
 
+    animalCardContainerEl.innerHTML = '';
+    resultsEl.innerHTML = '';
+
     // displays number of results
-    resultsEl.textContent = animal.length;
+    resultsEl.textContent = 'Number of Pets Found: ' + animal.length;
 
     // for as many results we want to display on a page (18)
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < animal.length; i++) {
         // create the animal card, set it's attributes and contents
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
@@ -136,3 +147,4 @@ function drawAnimalCards(animal) {
 init();
 
 submitBtnEl.addEventListener('click', animalSearch);
+loadMoreBtnEl.addEventListener('click', loadMore);
