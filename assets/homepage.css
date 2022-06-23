@@ -157,7 +157,7 @@ h1 {
 
 .cats {
         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
-        height: 00px;
+        height: 50vh;
         width: 45%;
         background-size: cover;
         display: -webkit-flex;
