@@ -6,6 +6,7 @@ var animalSizeEl = document.getElementById('animalSize')
 var animalGenderEl = document.getElementById('animalGender')
 var findLocateEl = document.getElementById('findlocate')
 var submitBtnEl = document.getElementById('submitBtn')
+var numPetsTextEl = document.getElementById('num-pets-text')
 
 // stores access token
 var accessToken;
@@ -82,7 +83,7 @@ function drawAnimalCards(animal) {
     console.log(animal)
 
     // displays number of results
-    resultsEl.textContent = animal.length;
+    resultsEl.textContent = 'Number of Pets Found: ' + animal.length;
 
     // for as many results we want to display on a page (18)
     for (let i = 0; i < 18; i++) {
