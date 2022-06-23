@@ -3,14 +3,12 @@ var resultsEl = document.getElementById('results')
 var animalTypeEl = document.getElementById('animalType')
 var animalAgeEl = document.getElementById('animalAge')
 var animalSizeEl = document.getElementById('animalSize')
-var animalGenderEl  = document.getElementById('animalGender')
+var animalGenderEl = document.getElementById('animalGender')
 var findLocateEl = document.getElementById('findlocate')
 var submitBtnEl = document.getElementById('submitBtn')
 
 // stores access token
 var accessToken;
-
-var tokenObject = {};
 
 // results to show per page
 var resultsPerPage = 18;
@@ -18,14 +16,11 @@ var resultsPerPage = 18;
 // inital tokenRequest
 function init() {
     tokenRequest();
-    console.log(accessToken)
-    console.log(tokenObject)
 }
-
 
 // fetch request for authorization token
 function tokenRequest() {
-    fetch("https://api.petfinder.com/v2/oauth2/token", {
+    return fetch("https://api.petfinder.com/v2/oauth2/token", {
         method: "POST",
         body: JSON.stringify({
             "grant_type": "client_credentials",
@@ -40,18 +35,20 @@ function tokenRequest() {
             return response.json();
         })
         .then(function (currentData) {
-            accessToken = currentData.access_token;
             // set the access token equal to what the server gives us
-            tokenObject.token = currentData.access_token;
+            var tempAccessToken = currentData.access_token;
+            sessionStorage.setItem('token', tempAccessToken)
         })
 }
 
 // retreives animal information from api
-function animalSearch(tokenObject) {
+function animalSearch(event) {
+    event.preventDefault();
+    accessToken = sessionStorage.getItem('token');
     fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
-        mode: "no-cors",
+        // mode: "no-cors",
         headers: {
-            'Authorization': 'Bearer ' + tokenObject.token,
+            'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
         }
     })
@@ -136,4 +133,4 @@ function drawAnimalCards(animal) {
 // start-up function
 init();
 
-submitBtnEl.addEventListener('click', animalSearch(tokenObject));
+submitBtnEl.addEventListener('click', animalSearch);
