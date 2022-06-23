@@ -44,8 +44,11 @@ function tokenRequest() {
 // retreives animal information from api
 function animalSearch(event) {
     event.preventDefault();
+
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=1&limit=100`;
+
     accessToken = sessionStorage.getItem('token');
-    fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
+    fetch(currentUrl, {
         headers: {
             'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
@@ -90,7 +93,7 @@ function drawAnimalCards(animal) {
             `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-                if (animal[i].primary_photo_cropped?.small) {
+                if (animal[i].primary_photo_cropped.small != null && animal[i].primary_photo_cropped.small != undefined) {
                     return `
               src='${animal[i].primary_photo_cropped.small}'
               `
