@@ -46,7 +46,6 @@ function animalSearch(event) {
     event.preventDefault();
     accessToken = sessionStorage.getItem('token');
     fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
-        // mode: "no-cors",
         headers: {
             'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
@@ -91,7 +90,7 @@ function drawAnimalCards(animal) {
             `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-                if (animal[i].primary_photo_cropped) {
+                if (animal[i].primary_photo_cropped?.small) {
                     return `
               src='${animal[i].primary_photo_cropped.small}'
               `
