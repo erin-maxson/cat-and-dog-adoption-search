@@ -82,14 +82,15 @@ function filterByNamePhoto(animal) {
 
 function loadMore(event){
     pageCount++;
-    animalCardContainerEl.innerHTML = '';
-    resultsEl.innerHTML = '';
     animalSearch(event);
 }
 
 // displays the animals information in a card
 function drawAnimalCards(animal) {
     console.log(animal)
+
+    animalCardContainerEl.innerHTML = '';
+    resultsEl.innerHTML = '';
 
     // displays number of results
     resultsEl.textContent = 'Number of Pets Found: ' + animal.length;
