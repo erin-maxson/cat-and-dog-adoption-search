@@ -7,12 +7,14 @@ var animalGenderEl = document.getElementById('animalGender')
 var findLocateEl = document.getElementById('findlocate')
 var submitBtnEl = document.getElementById('submitBtn')
 var numPetsTextEl = document.getElementById('num-pets-text')
+var loadMoreBtnEl = document.getElementById('loadMoreBtn')
 
 // stores access token
 var accessToken;
 
 // results to show per page
 var resultsPerPage = 18;
+var pageCount = 1;
 
 // inital tokenRequest
 function init() {
@@ -78,6 +80,12 @@ function filterByNamePhoto(animal) {
     }
 }
 
+function loadMore(){
+    pageCount++;
+    animalCardContainerEl.innerHTML = '';
+    resultsEl.innerHTML = '';
+}
+
 // displays the animals information in a card
 function drawAnimalCards(animal) {
     console.log(animal)
@@ -137,3 +145,4 @@ function drawAnimalCards(animal) {
 init();
 
 submitBtnEl.addEventListener('click', animalSearch);
+loadMoreBtnEl.addEventListener('click', loadMore);
