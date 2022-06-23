@@ -156,9 +156,9 @@ h1 {
 }
 
 .cats {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/cats\ on\ the\ counter.jpg") top right no-repeat;
-        height: 50vh;
-        width: 45%;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/doginwindow.jpg") top right no-repeat;
+        height: 80vh;
+        width: 80%;
         background-size: cover;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -169,22 +169,6 @@ h1 {
         margin: 20px;
         font-family: 'Fira Sans', sans-serif;
 }
-
-.dogs {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/dogs.jpg") top right no-repeat;
-    height: 50vh;
-    width: 45%;
-    background-size: cover;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin: 20px;
-    font-family: 'Fira Sans', sans-serif;
-}
-
 
 .social-footer {
     padding: 15px;
@@ -219,18 +203,10 @@ a {
   color: white;
 }
   
-#h1Dogs {
-  color: white;
-}
-
 #subheader {
   color: white;
 }
 
 #catsBtn {
-  background-color: #4CBA94;
-}
-
-#dogsBtn {
   background-color: #4CBA94;
 }
