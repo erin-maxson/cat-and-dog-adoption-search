@@ -2,7 +2,7 @@ var catFactsEl = document.getElementById('catFacts')
 
 var factContainsInvalid;
 var factContainsUnsubscribe;
-var validFact;
+var factContainsLowerUnsub;
 
 // fetches cat facts from the meowfacts api
 function grabCatFact() {
@@ -11,32 +11,20 @@ function grabCatFact() {
         return response.json();
     })
     .then(function (data) {
-        // log the data
-        console.log(data);
-
         // check for invalid cat facts
         factContainsInvalid = data.data[0].includes('Invalid');
-        factContainsUnsubscribe = data.data[0].includes('tj3G5de$se')
+        factContainsUnsubscribe = data.data[0].includes('tj3G5de$se');
+        factContainsLowerUnsub = data.data[0].includes('unsubscribe?')
 
 
         // if any cases are true
-        if (factContainsInvalid || factContainsUnsubscribe) {
+        if (factContainsInvalid || factContainsUnsubscribe || factContainsLowerUnsub) {
             // is not a valid fact
-            validFact = false;
+            grabCatFact();
         }
         else {
             // is a valid fact
-            validFact = true;
-        }
-        console.log(validFact)
-
-        // if it's a valid fact, display it
-        if (validFact) {
             catFactsEl.textContent = data.data;
-        }
-        // if not, call the api again
-        else {
-            grabCatFact();
         }
     })
 }

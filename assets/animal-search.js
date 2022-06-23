@@ -1,9 +1,16 @@
 var animalCardContainerEl = document.getElementById('animal-card-container')
 var resultsEl = document.getElementById('results')
+var animalTypeEl = document.getElementById('animalType')
+var animalAgeEl = document.getElementById('animalAge')
+var animalSizeEl = document.getElementById('animalSize')
+var animalGenderEl = document.getElementById('animalGender')
+var findLocateEl = document.getElementById('findlocate')
+var submitBtnEl = document.getElementById('submitBtn')
 
 // stores access token
 var accessToken;
 
+// results to show per page
 var resultsPerPage = 18;
 
 // inital tokenRequest
@@ -11,10 +18,9 @@ function init() {
     tokenRequest();
 }
 
-
 // fetch request for authorization token
 function tokenRequest() {
-    fetch("https://api.petfinder.com/v2/oauth2/token", {
+    return fetch("https://api.petfinder.com/v2/oauth2/token", {
         method: "POST",
         body: JSON.stringify({
             "grant_type": "client_credentials",
@@ -30,19 +36,19 @@ function tokenRequest() {
         })
         .then(function (currentData) {
             // set the access token equal to what the server gives us
-            accessToken = currentData.access_token;
-
-            // log the token
-            console.log(accessToken)
-
-            // run the animal search using the accessToken
-            animalSearch(accessToken)
+            var tempAccessToken = currentData.access_token;
+            sessionStorage.setItem('token', tempAccessToken)
         })
 }
 
 // retreives animal information from api
-function animalSearch(accessToken) {
-    fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
+function animalSearch(event) {
+    event.preventDefault();
+
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=1&limit=100`;
+
+    accessToken = sessionStorage.getItem('token');
+    fetch(currentUrl, {
         headers: {
             'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
@@ -87,7 +93,7 @@ function drawAnimalCards(animal) {
             `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-                if (animal[i].primary_photo_cropped) {
+                if (animal[i].primary_photo_cropped.small != null && animal[i].primary_photo_cropped.small != undefined) {
                     return `
               src='${animal[i].primary_photo_cropped.small}'
               `
@@ -128,3 +134,5 @@ function drawAnimalCards(animal) {
 
 // start-up function
 init();
+
+submitBtnEl.addEventListener('click', animalSearch);
