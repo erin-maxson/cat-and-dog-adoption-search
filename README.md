@@ -4,7 +4,7 @@
 
 This application was created to help a user find local dogs and cats that are available for adoption. By using the Petfinder API and adding in some fun pet facts APIs, we wanted to provide an easy way to search for local adoptable pets. We decided to use Foundation for the CSS framework. Javascript is used to connect the APIs and interactivity across the frontend. 
 
-We learned that it takes a team to complete something like this in a short period of time. We had to work together to get things ironed out between our group and also ensure that this project would be useful/functional. 
+We learned that it takes a team to complete something like this in a short period of time. We had to work together to get things ironed out between our group and also ensure that this project would be useful/functional. We may be small, but we are mighty!
 
 ## Table of Contents
 
