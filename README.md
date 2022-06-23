@@ -19,11 +19,14 @@ To install this project, download the files from the repo and right click the in
 
 ## Usage
 
-To use this project, simply open up the index.html file and search for 
+To use this project, simply open up the index.html file and search by selecting between "Cats" and "Dogs" and typing in your city or location. [See home-1] If you'd like to filter down your search even more, you can simply click on the "Get Searchin'" button under the main search bar on the index.html [See home-2].
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Once you've started your preliminary search from the homepage or if you have opted to search with more filters on the animal-search.html page, you will see a a random cat fact appear at the top of the page every time you refresh or complete a new search inside of animal-search.html. [See search-1] You'll also have the ability to update your search criteria and filters on this page and last, but not least, be able to see your search results based on the criteria you added in the index.html search or the search from your animal-search.html inputs. [See search-2]
+
+![top half of index.html with search bar](./assets/images/home-1.png)
+![bottom half of index.html with button to more filtered search](./assets/images/home-2.png)
+![top half of animal-search.html with random cat fact, return home button, and filtered search functionality](./assets/images/search-1.png)
+![bottom half of animal-search.html with search results and load more button](./assets/images/search-2.png)
 
 ## Credits
 
@@ -37,7 +40,7 @@ API Credits:
 Petfinder API: [https://www.petfinder.com/developers/](https://www.petfinder.com/developers/)
 CatFacts API: cat-facts by alexwohlbruck. [https://github.com/alexwohlbruck/cat-facts](https://github.com/alexwohlbruck/cat-facts), [https://github.com/alexwohlbruck](https://github.com/alexwohlbruck)
 
-Thanks to Brian Baker and Phil Loy for helping us with authenticating the PetFinder API.
+Thanks to Brian Baker and Phil Loy for helping us with authenticating the PetFinder API and all of the awesome advice along the way.
 
 ## License
 
