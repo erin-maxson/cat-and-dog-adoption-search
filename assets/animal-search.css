@@ -9,6 +9,15 @@ body {
     justify-content: center;
   }
 
+.homeBtn {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 12px;
+  border: #fefefe solid 2px;
+  padding: 20px;
+}
+
 img.localpet {
   height: 100px !important;
   width: auto !important;
