@@ -9,6 +9,11 @@ body {
     justify-content: center;
   }
 
+img.localpet {
+  height: 100px !important;
+  width: auto !important;
+}
+
 .randomCatFact {
     margin-left: 0.75rem;
     font-family: 'Fira Sans', sans-serif;
@@ -17,6 +22,7 @@ body {
     margin-bottom: 12px;
     padding-top: 20px;
     padding-bottom: 0px;
+    justify-content: center;
 }
   
 .hero-search-filter {
@@ -175,10 +181,8 @@ h1 {
   color: #0a0a0a;
   padding: 20px;
   margin: 10px;
-  height: 530px;
+  height: 550px;
   width: 300px;
-  object-fit: contain;
-  
 }
 
 .card-user-profile > :last-child {
@@ -189,8 +193,18 @@ h1 {
   opacity: 1;
 }
 
+
+img {
+  height: 260px !important;
+  width: 450px !important;
+  border: #4CBA94 5px solid !important;
+  object-fit: cover;
+
+}
+
 .card-user-profile-content {
   position: relative;
+  padding-top: 10px;
 }
 
 .card-user-profile-content::before {
@@ -212,7 +226,7 @@ h1 {
           flex: 0 1 auto;
   padding: 1rem;
   background: #e6e6e6;
-  background: #fefefe;
+  background: #4CBA94;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -222,11 +236,12 @@ h1 {
   margin-bottom: 0px;
 }
 
-.card-user-profile-name {
-  margin-bottom: 0;
-  font-size: 1.5rem;
+p, #animal-name {
+  margin-bottom: 0 !important;
   font-weight: bold;
   text-align: center;
+  color: black !important;
+  padding: 5px;
 }
 
 .card-user-profile-button {
@@ -246,50 +261,27 @@ h1 {
   opacity: 0.8;
 }
 
-.link {
-  text-decoration: underline;
-  color: white;
-}
-
-
 a, #moreInfoBtn {
-    color: black;
-    border-color: black;
-    border: solid 1px;
-    padding: 10px;
+    color: white !important;
+    background-color: #4CBA94 !important;
+    border-color: #4CBA94 !important;
+    border: solid 1px !important;
+    padding: 10px !important;
   }
 
-
-p, #animal-location {
-  font-size: 15px;
-  font-weight: bold;
-  padding: 0px;
-}
-
-
-.button-icon-badge {
+.loadDiv
+{
   display: flex;
-  padding: 1rem 2rem;
-  background: #4CBA94;
   justify-content: center;
-  width: 150px;
+  align-items: center;
+  padding: 20px;
 }
 
-.button-icon-badge .button-icon-badge-text {
-  padding: 0 0.5rem;
+.loadBtn {
+  background-color: #4CBA94;
+  color: white;
+  padding: 20px;
 }
-
-.button-icon-badge .badge {
-  font-size: 0.8em;
-  padding: 0.4rem;
-}
-
-.button-icon-badge .fa {
-  color: #fefefe;
-  font-size: 1rem;
-}
-
-
 
 .social-footer {
   padding: 1rem;
@@ -305,6 +297,18 @@ p, #animal-location {
           justify-content: space-between;
 }
 
-.logo {
-  height: 100px;
+img.logo {
+  height: 100px !important;
+  width: auto !important;
+  margin: 20px;
+}
+
+a, #link {
+  border: none !important;
+}
+
+@media screen and (max-width: 375px) {
+ul.menu.simple {
+display: inline;
+}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap">
-    <link rel="stylesheet" href="./assets/normalize.css">
+    <link rel="stylesheet" href="./assets/foundation.css">
     <link rel="stylesheet" href="./assets/animal-search.css">
 </head>
 
@@ -38,7 +38,6 @@
 
         <container class="hero-search-filter">
             <div class="hero-search-filter-content">
-                <img class="hero-search-filter-logo" src="" alt="" />
                 <h2 class="adopt-h1">Ready to find a furry friend?</h2>
                 <form id="search-form" class="hero-search-filter-form" action="">
                     <label for="findtext">Search</label>
@@ -81,11 +80,10 @@
 
         </div>
 
-        <a href="#" class="button button-icon-badge">
-            <i class="fa-solid fa-circle-chevron-down"></i>
-            <span class="button-icon-badge-text">Load More</span>
-          </a>
-                    
+        <di class="loadDiv">
+            <button class="loadBtn">Load More <i class="fa-solid fa-circle-chevron-down"></i></button>
+        </div>
+
     </main>
 
     <footer class="social-footer">
@@ -105,6 +103,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="./assets/animal-search.js"></script>
     <script src="./assets/catfacts.js"></script>
 </body>
