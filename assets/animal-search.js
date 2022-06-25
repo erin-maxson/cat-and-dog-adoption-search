@@ -22,12 +22,46 @@ var pageCount = 1;
 function init() {
     tokenRequest();
 
+    // check if there are pre-existing values for animal type, search location, and distance
+    if (localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation') && localStorage.hasOwnProperty('distanceFrom')) {
 
 
-    if(localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation')){
-        
+        // call the home page search
+        homepageAnimalSearch();
     }
 }
+
+function homepageAnimalSearch() {
+    // grab inital values acquired from homepage
+    var initialAnimalType = localStorage.getItem('initialAnimalType');
+    var iniitalSearchLocation = localStorage.getItem('initialSearchLocation')
+    var initialDistanceFrom = localStorage.getItem('distanceFrom')
+
+    console.log(initialAnimalType, iniitalSearchLocation, initialDistanceFrom)
+    // clear local storage so this condition doesn't trip more than once
+    // localStorage.clear();
+
+    // create initial url using values from home page
+    var initialUrl = `https://api.petfinder.com/v2/animals?type=${initialAnimalType}&location=${iniitalSearchLocation}&distance=${initialDistanceFrom}`
+
+    accessToken = sessionStorage.getItem('token');
+    fetch(initialUrl, {
+        headers: {
+            'Authorization': 'Bearer ' + accessToken,
+            'Content-Type': 'application/json',
+        }
+    })
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (currentData) {
+            console.log(currentData)
+
+            // display the animals' information
+            drawAnimalCards(currentData.animals.filter(filterByNamePhoto))
+        })
+} ``
 
 // fetch request for authorization token
 function tokenRequest() {
@@ -88,7 +122,7 @@ function filterByNamePhoto(animal) {
     }
 }
 
-function loadMore(event){
+function loadMore(event) {
     pageCount++;
     animalSearch(event);
 }
