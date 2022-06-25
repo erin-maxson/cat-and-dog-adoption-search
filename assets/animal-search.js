@@ -139,6 +139,8 @@ function loadMore(event) {
 function drawAnimalCards(animal) {
     console.log(animal)
 
+    window.scrollTo(0, 100)
+
     animalCardContainerEl.innerHTML = '';
     resultsEl.innerHTML = '';
 
