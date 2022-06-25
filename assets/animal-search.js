@@ -19,6 +19,12 @@ var pageCount = 1;
 // inital tokenRequest
 function init() {
     tokenRequest();
+
+
+
+    if(localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation')){
+        
+    }
 }
 
 // fetch request for authorization token

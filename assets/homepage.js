@@ -7,7 +7,7 @@ function animalSearchHandler(event){
     event.preventDefault();
 
     // set user search preferences in local storage
-     localStorage.setItem('initalAnimalType', animalTypeEl.value)
+     localStorage.setItem('initialAnimalType', animalTypeEl.value)
      localStorage.setItem('initialSearchLocation', searchLocationEl.value)
 
      // redirect to search page to display results
