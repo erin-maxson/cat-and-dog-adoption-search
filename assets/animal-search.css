@@ -85,7 +85,16 @@ img.localpet {
             flex-wrap: wrap;
   }
   
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 400px) {
+
+    .hero-search-filter-content {
+      padding: 100px;
+    }
+
+    .adopt-h1 {
+      display: none;
+    }
+
     .hero-search-filter-menu li {
       -webkit-flex-basis: 50%;
           -ms-flex-preferred-size: 50%;
@@ -96,6 +105,20 @@ img.localpet {
           -ms-flex-pack: center;
               justify-content: center;
     }
+
+    .hero-search-filter-form {
+      display: inline-block !important;
+      width: 100%;
+    }
+
+    .homeBtn {
+      display: none;
+    }
+
+    #catFactArea {
+      padding: 30px;
+    }
+
   }
   
   .hero-search-filter-menu a {
