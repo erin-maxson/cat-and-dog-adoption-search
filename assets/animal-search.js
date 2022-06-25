@@ -45,7 +45,7 @@ function init() {
     }
 }
 
-function homepageAnimalSearch(initialUrl) {
+function homepageAnimalSearch(initialUrl, accessToken) {
     accessToken = sessionStorage.getItem('token');
     fetch(initialUrl, {
         headers: {
