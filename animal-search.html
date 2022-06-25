@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400&display=swap">
-    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/foundation.css">
     <link rel="stylesheet" href="./assets/animal-search.css">
 </head>
 
@@ -19,6 +20,8 @@
         <div class="top-bar-container" data-sticky-container>
             <div class="sticky sticky-topbar" data-sticky data-options="anchor: page; marginTop: 0; stickyOn: small;">
                 <div class="top-bar">
+                    <button class="homeBtn"><a href="./index.html"><i class="fa-solid fa-arrow-left-long-to-line"></i>Return Home</a></button>
+                    <button></button>
                     <img src="assets/images/LocalPet 200 Center.png" class="localpet"
                         alt="LocalPet logo with dog in heart">
                 </div>
@@ -38,34 +41,41 @@
 
         <container class="hero-search-filter">
             <div class="hero-search-filter-content">
-                <img class="hero-search-filter-logo" src="" alt="" />
                 <h2 class="adopt-h1">Ready to find a furry friend?</h2>
                 <form id="search-form" class="hero-search-filter-form" action="">
                     <label for="findtext">Search</label>
-                    <select name="animalType" class="selectDropdown">
-                        <option id="catOption">Cats</option>
-                        <option id="DogOption">Dogs</option>
+                    <select name="animalType" id="animalType" class="selectDropdown">
+                        <option id="catOption">Cat</option>
+                        <option id="DogOption">Dog</option>
                     </select>
                     <div class="divider">&nbsp;</div>
-                    <select name="age" class="selectDropdown">
+                    <select name="age" id="animalAge" class="selectDropdown">
                         <option id="babyOption">Baby</option>
                         <option id="youngOption">Young</option>
                         <option id="adultOption">Adult</option>
                     </select>
                     <div class="divider">&nbsp;</div>
-                    <select name="size" class="selectDropdown">
+                    <select name="size" id="animalSize" class="selectDropdown">
                         <option id="smallOption">Small</option>
                         <option id="mediumOption">Medium</option>
                         <option id="largeOption">Large</option>
                     </select>
                     <div class="divider">&nbsp;</div>
-                    <select name="gender" class="selectDropdown">
+                    <select name="gender" id="animalGender" class="selectDropdown">
                         <option id="maleOption">Male</option>
                         <option id="femaleOption">Female</option>
                     </select>
                     <div class="divider">&nbsp;</div>
-                    <label for="findlocate">Near</label>
+                    <label for="findlocate">Zip Code</label>
                     <input id="findlocate" class="hero-search-filter-form-near" type="text" />
+                    <div class="divider">&nbsp;</div>
+                    <label for="searchDistance">Miles</label>
+                    <select name="distance" id="searchDistance" class="selectDropdown">
+                        <option id="10mi">10</option>
+                        <option id="25mi">25</option>
+                        <option id="50mi">50</option>
+                        <option id="100mi">100</option>
+                    </select>
                     <!-- need to come back and fix this search icon -- EM -->
                     <button id="submitBtn" class="submit"><i class="fa-solid fa-magnifying-glass"></i>Find A
                         Pet</i></button>
@@ -74,18 +84,17 @@
         </container>
 
         <div>
-            <h4 class="results-found">Number of Pets Found: <span id="results"></span></h2>
+            <h4 class="results-found" id="num-pets-text"><span id="results"></span></h4>
         </div>
 
         <div id="animal-card-container" class="grid-x align-center cell medium-3 animal-card-info">
 
         </div>
 
-        <a href="#" class="button button-icon-badge">
-            <i class="fa-solid fa-circle-chevron-down"></i>
-            <span class="button-icon-badge-text">Load More</span>
-          </a>
-                    
+        <div class="loadDiv">
+            <button class="loadBtn" id="loadMoreBtn">Load More <i class="fa-solid fa-circle-chevron-down"></i></button>
+        </div>
+
     </main>
 
     <footer class="social-footer">
@@ -105,6 +114,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="./assets/animal-search.js"></script>
     <script src="./assets/catfacts.js"></script>
 </body>

@@ -1,20 +1,73 @@
 var animalCardContainerEl = document.getElementById('animal-card-container')
 var resultsEl = document.getElementById('results')
+var animalTypeEl = document.getElementById('animalType')
+var animalAgeEl = document.getElementById('animalAge')
+var animalSizeEl = document.getElementById('animalSize')
+var animalGenderEl = document.getElementById('animalGender')
+var findLocateEl = document.getElementById('findlocate')
+var submitBtnEl = document.getElementById('submitBtn')
+var numPetsTextEl = document.getElementById('num-pets-text')
+var loadMoreBtnEl = document.getElementById('loadMoreBtn')
+var searchLocationEl = document.getElementById('findlocate')
+var distanceFromEl = document.getElementById('searchDistance')
 
 // stores access token
 var accessToken;
 
-var resultsPerPage = 18;
+// results to show per page
+var resultsPerPage = 20;
+var pageCount = 1;
+
+var initialUrl;
+var homepageRequest = false;
 
 // inital tokenRequest
 function init() {
     tokenRequest();
+
+    // check if there are pre-existing values for animal type, search location, and distance
+    if (localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation') && localStorage.hasOwnProperty('distanceFrom')) {
+        homepageRequest = true;
+
+        // grab inital values acquired from homepage
+        var initialAnimalType = localStorage.getItem('initialAnimalType');
+        var iniitalSearchLocation = localStorage.getItem('initialSearchLocation')
+        var initialDistanceFrom = localStorage.getItem('distanceFrom')
+
+        // clear local storage so this condition doesn't trip more than once
+        localStorage.clear();
+
+        // create initial url using values from home page
+        initialUrl = `https://api.petfinder.com/v2/animals?type=${initialAnimalType}&location=${iniitalSearchLocation}&distance=${initialDistanceFrom}&page=${pageCount}`
+
+        // call the home page search
+        homepageAnimalSearch(initialUrl);
+    }
 }
 
+function homepageAnimalSearch(initialUrl) {
+    accessToken = sessionStorage.getItem('token');
+    fetch(initialUrl, {
+        headers: {
+            'Authorization': 'Bearer ' + accessToken,
+            'Content-Type': 'application/json',
+        }
+    })
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (currentData) {
+            console.log(currentData)
+
+            // display the animals' information
+            drawAnimalCards(currentData.animals.filter(filterByNamePhoto))
+        })
+}
 
 // fetch request for authorization token
 function tokenRequest() {
-    fetch("https://api.petfinder.com/v2/oauth2/token", {
+    return fetch("https://api.petfinder.com/v2/oauth2/token", {
         method: "POST",
         body: JSON.stringify({
             "grant_type": "client_credentials",
@@ -30,19 +83,20 @@ function tokenRequest() {
         })
         .then(function (currentData) {
             // set the access token equal to what the server gives us
-            accessToken = currentData.access_token;
-
-            // log the token
-            console.log(accessToken)
-
-            // run the animal search using the accessToken
-            animalSearch(accessToken)
+            var tempAccessToken = currentData.access_token;
+            sessionStorage.setItem('token', tempAccessToken)
         })
 }
 
 // retreives animal information from api
-function animalSearch(accessToken) {
-    fetch("https://api.petfinder.com/v2/animals?type=dog&page=1&limit=75", {
+function animalSearch(event) {
+    homepageRequest = false;
+    event.preventDefault();
+
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&location=${searchLocationEl.value}&distance=${distanceFromEl.value}&limit=100`;
+
+    accessToken = sessionStorage.getItem('token');
+    fetch(currentUrl, {
         headers: {
             'Authorization': 'Bearer ' + accessToken,
             'Content-Type': 'application/json',
@@ -71,15 +125,30 @@ function filterByNamePhoto(animal) {
     }
 }
 
+function loadMore(event) {
+    pageCount++;
+    if(homepageRequest === true){
+        homepageAnimalSearch(initialUrl);
+    }
+    else{
+        animalSearch(event);
+    }
+}
+
 // displays the animals information in a card
 function drawAnimalCards(animal) {
     console.log(animal)
 
+    window.scrollTo(0, 100)
+
+    animalCardContainerEl.innerHTML = '';
+    resultsEl.innerHTML = '';
+
     // displays number of results
-    resultsEl.textContent = animal.length;
+    resultsEl.textContent = 'Number of Pets Found: ' + animal.length;
 
     // for as many results we want to display on a page (18)
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < animal.length; i++) {
         // create the animal card, set it's attributes and contents
         var animalCard = document.createElement('div');
         animalCard.setAttribute('class', 'animal-card');
@@ -87,7 +156,7 @@ function drawAnimalCards(animal) {
             `<div class=“card-user-profile cell medium-3">
         <img id=“animal-photo” class=“card-user-profile-img”
         ${(() => {
-                if (animal[i].primary_photo_cropped) {
+                if (animal[i].primary_photo_cropped.small != null && animal[i].primary_photo_cropped.small != undefined) {
                     return `
               src='${animal[i].primary_photo_cropped.small}'
               `
@@ -128,3 +197,6 @@ function drawAnimalCards(animal) {
 
 // start-up function
 init();
+
+submitBtnEl.addEventListener('click', animalSearch);
+loadMoreBtnEl.addEventListener('click', loadMore);
