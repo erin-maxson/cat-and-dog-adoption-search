@@ -8,6 +8,8 @@ var findLocateEl = document.getElementById('findlocate')
 var submitBtnEl = document.getElementById('submitBtn')
 var numPetsTextEl = document.getElementById('num-pets-text')
 var loadMoreBtnEl = document.getElementById('loadMoreBtn')
+var searchLocationEl = document.getElementById('findlocate')
+var distanceFromEl = document.getElementById('searchDistance')
 
 // stores access token
 var accessToken;
@@ -19,6 +21,12 @@ var pageCount = 1;
 // inital tokenRequest
 function init() {
     tokenRequest();
+
+
+
+    if(localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation')){
+        
+    }
 }
 
 // fetch request for authorization token
@@ -48,7 +56,7 @@ function tokenRequest() {
 function animalSearch(event) {
     event.preventDefault();
 
-    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&limit=100`;
+    var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&location=${searchLocationEl.value}&distance=${distanceFromEl.value}&limit=100`;
 
     accessToken = sessionStorage.getItem('token');
     fetch(currentUrl, {
