@@ -18,32 +18,34 @@ var accessToken;
 var resultsPerPage = 20;
 var pageCount = 1;
 
+var initialUrl;
+var homepageRequest = false;
+
 // inital tokenRequest
 function init() {
     tokenRequest();
 
     // check if there are pre-existing values for animal type, search location, and distance
     if (localStorage.hasOwnProperty('initialAnimalType') && localStorage.hasOwnProperty('initialSearchLocation') && localStorage.hasOwnProperty('distanceFrom')) {
+        homepageRequest = true;
 
+        // grab inital values acquired from homepage
+        var initialAnimalType = localStorage.getItem('initialAnimalType');
+        var iniitalSearchLocation = localStorage.getItem('initialSearchLocation')
+        var initialDistanceFrom = localStorage.getItem('distanceFrom')
+
+        // clear local storage so this condition doesn't trip more than once
+        localStorage.clear();
+
+        // create initial url using values from home page
+        initialUrl = `https://api.petfinder.com/v2/animals?type=${initialAnimalType}&location=${iniitalSearchLocation}&distance=${initialDistanceFrom}&page=${pageCount}`
 
         // call the home page search
-        homepageAnimalSearch();
+        homepageAnimalSearch(initialUrl);
     }
 }
 
-function homepageAnimalSearch() {
-    // grab inital values acquired from homepage
-    var initialAnimalType = localStorage.getItem('initialAnimalType');
-    var iniitalSearchLocation = localStorage.getItem('initialSearchLocation')
-    var initialDistanceFrom = localStorage.getItem('distanceFrom')
-
-    console.log(initialAnimalType, iniitalSearchLocation, initialDistanceFrom)
-    // clear local storage so this condition doesn't trip more than once
-    // localStorage.clear();
-
-    // create initial url using values from home page
-    var initialUrl = `https://api.petfinder.com/v2/animals?type=${initialAnimalType}&location=${iniitalSearchLocation}&distance=${initialDistanceFrom}`
-
+function homepageAnimalSearch(initialUrl) {
     accessToken = sessionStorage.getItem('token');
     fetch(initialUrl, {
         headers: {
@@ -61,7 +63,7 @@ function homepageAnimalSearch() {
             // display the animals' information
             drawAnimalCards(currentData.animals.filter(filterByNamePhoto))
         })
-} ``
+}
 
 // fetch request for authorization token
 function tokenRequest() {
@@ -88,6 +90,7 @@ function tokenRequest() {
 
 // retreives animal information from api
 function animalSearch(event) {
+    homepageRequest = false;
     event.preventDefault();
 
     var currentUrl = `https://api.petfinder.com/v2/animals?type=${animalTypeEl.value}&age=${animalAgeEl.value}&size=${animalSizeEl.value}&gender=${animalGenderEl.value}&page=${pageCount}&location=${searchLocationEl.value}&distance=${distanceFromEl.value}&limit=100`;
@@ -124,7 +127,12 @@ function filterByNamePhoto(animal) {
 
 function loadMore(event) {
     pageCount++;
-    animalSearch(event);
+    if(homepageRequest === true){
+        homepageAnimalSearch(initialUrl);
+    }
+    else{
+        animalSearch(event);
+    }
 }
 
 // displays the animals information in a card
